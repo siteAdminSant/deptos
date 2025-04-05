@@ -76,6 +76,7 @@
       border-radius: 1rem;
       width: 80%;
       max-width: 800px;
+      position: relative;
     }
     .popup-close {
       position: absolute;
@@ -83,6 +84,10 @@
       right: 10px;
       font-size: 1.5rem;
       cursor: pointer;
+      color: #333;
+      background: none;
+      border: none;
+      font-weight: bold;
     }
     .popup-images img {
       width: 100%;
@@ -93,7 +98,7 @@
   </style>
 </head>
 <body>
-  <h1>Despues se arregla el titulo</h1>
+  <h1>Departamentos que gestiono</h1>
   <div class="gallery">
     <div class="card" onclick="openPopup(1)">
       <img src="https://via.placeholder.com/400x300" alt="Depto 1">
@@ -120,10 +125,10 @@
     </div>
   </div>
 
-  <!-- Popup -->
+  <!-- Popup 1 -->
   <div id="popup1" class="popup">
     <div class="popup-content">
-      <span class="popup-close" onclick="closePopup(1)">×</span>
+      <button class="popup-close" onclick="closePopup(1)">×</button>
       <h2>Depto en Recoleta</h2>
       <div class="popup-images">
         <img src="https://via.placeholder.com/800x600" alt="Imagen 1">
@@ -134,9 +139,10 @@
     </div>
   </div>
 
+  <!-- Popup 2 -->
   <div id="popup2" class="popup">
     <div class="popup-content">
-      <span class="popup-close" onclick="closePopup(2)">×</span>
+      <button class="popup-close" onclick="closePopup(2)">×</button>
       <h2>Loft en Palermo</h2>
       <div class="popup-images">
         <img src="https://via.placeholder.com/800x600" alt="Imagen 1">
@@ -147,9 +153,10 @@
     </div>
   </div>
 
+  <!-- Popup 3 -->
   <div id="popup3" class="popup">
     <div class="popup-content">
-      <span class="popup-close" onclick="closePopup(3)">×</span>
+      <button class="popup-close" onclick="closePopup(3)">×</button>
       <h2>Departamento en Belgrano</h2>
       <div class="popup-images">
         <img src="https://via.placeholder.com/800x600" alt="Imagen 1">
