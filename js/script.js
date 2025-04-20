@@ -1,6 +1,3 @@
-
-// Carga deptos dinamicamente
-
 fetch('./data/info.json')
   .then(response => response.json())
   .then(departamentos => {
@@ -21,18 +18,15 @@ fetch('./data/info.json')
       `;
       gallery.appendChild(card);
 
-      // Crear popup dinámico
+      // Crear popup
       const popup = document.createElement('div');
       popup.className = 'popup';
       popup.id = `popup${depto.id}`;
 
-      /*const imagenesHTML = depto.imagenes.map(img => `
-        <img src="${depto.directorio}${img}" alt="Foto" onclick="showFullImage(this.src)" />
-      `).join('');*/
-      const imagenesHTML = depto.imagenes.map((img, index) => `
-        <img src="${depto.directorio}${img}" alt="Foto" onclick="openLightbox(${JSON.stringify(
-          depto.imagenes.map(imgName => depto.directorio + imgName)
-        )}, ${index})" />
+      const fullImageList = depto.imagenes.map(img => `${depto.directorio}${img}`);
+
+      const imagenesHTML = fullImageList.map((imgSrc, index) => `
+        <img src="${imgSrc}" alt="Foto" onclick='openLightbox(${JSON.stringify(fullImageList)}, ${index})' />
       `).join('');
 
       popup.innerHTML = `
@@ -51,6 +45,7 @@ fetch('./data/info.json')
   })
   .catch(error => console.error('Error al cargar los departamentos:', error));
 
+// Funciones para abrir/cerrar popups
 function openPopup(id) {
   document.getElementById(`popup${id}`).style.display = 'flex';
 }
@@ -59,10 +54,21 @@ function closePopup(id) {
   document.getElementById(`popup${id}`).style.display = 'none';
 }
 
-function showFullImage(src) {
-  const win = window.open("", "_blank");
-  win.document.write(`<img src="${src}" style="width:100%">`);
-}
+// Cerrar popup con clic fuera
+document.addEventListener('click', function (event) {
+  const popups = document.querySelectorAll('.popup');
+  popups.forEach(popup => {
+    if (popup.style.display === 'flex' &&
+        !popup.querySelector('.popup-content').contains(event.target) &&
+        !event.target.classList.contains('card')) {
+      popup.style.display = 'none';
+    }
+  });
+});
+
+// ============================
+// Lightbox / Carrusel
+// ============================
 
 let currentImageIndex = 0;
 let currentImageList = [];
@@ -93,11 +99,12 @@ function updateLightboxImage() {
   imgElement.src = currentImageList[currentImageIndex];
 }
 
-// Cerrar con ESC
+// Cerrar lightbox con ESC
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     closeLightbox();
+    // También cerramos cualquier popup abierto
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach(popup => popup.style.display = 'none');
   }
 });
-
-
