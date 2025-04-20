@@ -6,6 +6,21 @@
   <title>Departamentos en Airbnb</title>
   <style>
     body {
+      <!-- Banner de contacto -->
+      <div class="contact-banner">
+        <a href="https://wa.me/56912345678" target="_blank" title="WhatsApp">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" />
+        </a>
+        <a href="mailto:mailejemplo@gmail.com" title="Email">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/maildotru.svg" alt="Email" />
+        </a>
+        <a href="https://instagram.com/tuusuario" target="_blank" title="Instagram">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="https://facebook.com/tuusuario" target="_blank" title="Facebook">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" />
+        </a>
+      </div>
       font-family: sans-serif;
       background: url('./cmpy/IMG_5407.jpg') no-repeat center center fixed;
       background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
@@ -151,11 +166,31 @@
       font-weight: bold;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: background 0.3s ease;
-    }
-    
+    }    
     .popup-content a:hover {
       background: #e0484e;
     }
+    .contact-banner {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.6rem 1rem;
+      border-radius: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+    .contact-banner a img {
+        width: 24px;
+        height: 24px;
+        filter: grayscale(100%) brightness(0);
+        transition: filter 0.3s ease;
+      }
+      .contact-banner a:hover img {
+        filter: none;
+      }
   </style>
 </head>
 <body>
