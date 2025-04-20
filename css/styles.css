@@ -1,6 +1,6 @@
   body {
       font-family: sans-serif;
-      background: url('./cmpy/IMG_5407.jpg') no-repeat center center fixed;
+      background: url('../cmpy/IMG_5407.jpg') no-repeat center center fixed;
       background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
       margin: 0;
       padding: 2rem;
