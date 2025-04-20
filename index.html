@@ -1,8 +1,107 @@
-<!-- Dentro de tu <body>, justo después del <h1> -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Departamentos en Airbnb</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: url('./cmpy/IMG_5407.jpg') no-repeat center center fixed;
+      background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+      margin: 0;
+      padding: 2rem;
+      color: white; /* Asegura que el texto se vea bien sobre el fondo oscuro */
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para las tarjetas */
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-location {
+      color: gray;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .card a {
+      text-decoration: none;
+      color: white;
+      background: #ff5a5f;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+    }
 
-<h1>Departamentos que gestiono</h1>
-
-<!-- Filtros y búsqueda -->
+    /* Estilo del popup */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+    }
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+      background: none;
+      border: none;
+      font-weight: bold;
+    }
+    .popup-images img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Departamentos que gestiono</h1>
+  <!-- Filtros y búsqueda -->
 <div style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
   <input type="text" placeholder="Buscar por nombre..." style="padding: 0.5rem; border-radius: 5px; border: none; width: 180px;" />
   <input type="number" placeholder="Precio mínimo" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;" />
@@ -21,3 +120,82 @@
     <option value="4">4+</option>
   </select>
 </div>
+  <div class="gallery">
+    <div class="card" onclick="openPopup(1)">
+      <img src="https://via.placeholder.com/400x300" alt="Depto 1">
+      <div class="card-content">
+        <div class="card-title">Depto en Recoleta</div>
+        <div class="card-location">Buenos Aires, Argentina</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="openPopup(2)">
+      <img src="https://via.placeholder.com/400x300" alt="Depto 2">
+      <div class="card-content">
+        <div class="card-title">Loft en Palermo</div>
+        <div class="card-location">Buenos Aires, Argentina</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="openPopup(3)">
+      <img src="https://via.placeholder.com/400x300" alt="Depto 3">
+      <div class="card-content">
+        <div class="card-title">Departamento en Belgrano</div>
+        <div class="card-location">Buenos Aires, Argentina</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup 1 -->
+  <div id="popup1" class="popup">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup(1)">×</button>
+      <h2>Depto en Recoleta</h2>
+      <div class="popup-images">
+        <img src="https://via.placeholder.com/800x600" alt="Imagen 1">
+        <img src="https://via.placeholder.com/800x600" alt="Imagen 2">
+      </div>
+      <p>Este hermoso departamento en Recoleta es perfecto para quienes buscan una experiencia única en Buenos Aires.</p>
+      <a href="https://airbnb.com" target="_blank">Ver en Airbnb</a>
+    </div>
+  </div>
+
+  <!-- Popup 2 -->
+  <div id="popup2" class="popup">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup(2)">×</button>
+      <h2>Loft en Palermo</h2>
+      <div class="popup-images">
+        <img src="https://via.placeholder.com/800x600" alt="Imagen 1">
+        <img src="https://via.placeholder.com/800x600" alt="Imagen 2">
+      </div>
+      <p>Un loft moderno y bien ubicado en Palermo, ideal para parejas o viajes de negocios.</p>
+      <a href="https://airbnb.com" target="_blank">Ver en Airbnb</a>
+    </div>
+  </div>
+
+  <!-- Popup 3 -->
+  <div id="popup3" class="popup">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup(3)">×</button>
+      <h2>Departamento en Belgrano</h2>
+      <div class="popup-images">
+        <img src="https://via.placeholder.com/800x600" alt="Imagen 1">
+        <img src="https://via.placeholder.com/800x600" alt="Imagen 2">
+      </div>
+      <p>Con una ubicación excelente en Belgrano, este departamento es ideal para una estancia cómoda y tranquila.</p>
+      <a href="https://airbnb.com" target="_blank">Ver en Airbnb</a>
+    </div>
+  </div>
+
+  <script>
+    function openPopup(id) {
+      document.getElementById('popup' + id).style.display = 'flex';
+    }
+
+    function closePopup(id) {
+      document.getElementById('popup' + id).style.display = 'none';
+    }
+  </script>
+</body>
+</html>
