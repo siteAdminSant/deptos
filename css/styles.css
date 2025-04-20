@@ -1,5 +1,4 @@
- <style>
-    body {
+  body {
       font-family: sans-serif;
       background: url('./../cmpy/IMG_5407.jpg') no-repeat center center fixed;
       background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
@@ -216,5 +215,3 @@
     }
     .fullscreen-prev { left: 2rem; }
     .fullscreen-next { right: 2rem; }
-
-  </style>
