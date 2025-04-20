@@ -222,3 +222,97 @@ h1 {
   top: 50%;
   transform: translateY(-50%);
 }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .gallery {
+    gap: 1rem;
+    scroll-padding: 0.5rem;
+  }
+
+  .card {
+    width: 220px;
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-location {
+    font-size: 0.8rem;
+  }
+
+  .popup-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .popup-images img,
+  .horizontal-scroll img {
+    max-width: 240px;
+    height: 180px;
+  }
+
+  .popup-content a {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .contact-banner {
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .lightbox img {
+    max-width: 95%;
+    max-height: 70%;
+  }
+
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 180px;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  .popup-content {
+    padding: 1rem;
+  }
+
+  .popup-images img,
+  .horizontal-scroll img {
+    max-width: 200px;
+    height: 150px;
+  }
+
+  .popup-content p {
+    font-size: 1rem;
+  }
+}
+
