@@ -52,7 +52,7 @@
 
 // Carga deptos dinamicamente
 
-fetch('data/departamentos.json')
+fetch('../data/info.json')
   .then(response => response.json())
   .then(departamentos => {
     const gallery = document.getElementById('gallery');
