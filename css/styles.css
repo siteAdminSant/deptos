@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: url('../cmpy/IMG_5407.jpg') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
@@ -32,6 +32,20 @@ h1 {
   overflow: hidden;
   transition: transform 0.2s ease;
   cursor: pointer;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #222; /* Más oscuro para mejor contraste */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-location {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -99,6 +113,14 @@ h1 {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   color: #444;
+}
+
+.popup-content h2 {
+  font-size: 1.8rem;
+  color: #222; /* texto oscuro para buen contraste sobre blanco */
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .popup-close {
