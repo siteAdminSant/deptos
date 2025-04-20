@@ -8,8 +8,6 @@ fetch('./data/info.json')
       // Crear tarjeta
       const card = document.createElement('div');
       card.className = 'card';
-      card.addEventListener('click', () => openPopup(depto.id));
-      //card.setAttribute('onclick', `openPopup(${depto.id})`);
       card.innerHTML = `
         <img src="${depto.imagen}" alt="${depto.titulo}">
         <div class="card-content">
@@ -17,15 +15,15 @@ fetch('./data/info.json')
           <div class="card-location">${depto.ubicacion}</div>
         </div>
       `;
+      card.addEventListener('click', () => openPopup(depto.id));
       gallery.appendChild(card);
 
       // Crear popup
       const popup = document.createElement('div');
       popup.className = 'popup';
-      popup.id = `popup${depto.id}`;
+      popup.id = `popup-${depto.id}`;
 
       const fullImageList = depto.imagenes.map(img => `${depto.directorio}${img}`);
-
       const imagenesHTML = fullImageList.map((imgSrc, index) => `
         <img src="${imgSrc}" alt="Foto" onclick='openLightbox(${JSON.stringify(fullImageList)}, ${index})' />
       `).join('');
@@ -51,25 +49,29 @@ function openPopup(id) {
   const popup = document.getElementById(`popup-${id}`);
   if (popup) {
     popup.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+    document.body.style.overflow = 'hidden';
   }
 }
 
 function closePopup(id) {
-  document.getElementById(`popup${id}`).style.display = 'none';
+  const popup = document.getElementById(`popup-${id}`);
+  if (popup) {
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
 }
 
-// Cerrar popup con clic fuera
+// Cerrar popup haciendo clic fuera del contenido
 document.addEventListener('click', function (event) {
-  console.log('Abriendo popup de ID:');
-  const popups = document.querySelectorAll('.popup');
-  popups.forEach(popup => {
-    if (popup.style.display === 'flex' &&
-        !popup.querySelector('.popup-content').contains(event.target) &&
-        !event.target.classList.contains('card')) {
-      popup.style.display = 'none';
-    }
-  });
+  const activePopup = [...document.querySelectorAll('.popup')].find(p => p.style.display === 'flex');
+  if (
+    activePopup &&
+    !activePopup.querySelector('.popup-content').contains(event.target) &&
+    !event.target.closest('.card')
+  ) {
+    activePopup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
 });
 
 // ============================
@@ -101,16 +103,17 @@ function nextImage() {
 }
 
 function updateLightboxImage() {
-  const imgElement = document.getElementById('lightbox-img');
-  imgElement.src = currentImageList[currentImageIndex];
+  const img = document.getElementById('lightbox-img');
+  if (img && currentImageList.length) {
+    img.src = currentImageList[currentImageIndex];
+  }
 }
 
-// Cerrar lightbox con ESC
-document.addEventListener('keydown', function(event) {
+// Cerrar todo con ESC
+document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeLightbox();
-    // También cerramos cualquier popup abierto
-    const popups = document.querySelectorAll('.popup');
-    popups.forEach(popup => popup.style.display = 'none');
+    document.querySelectorAll('.popup').forEach(popup => popup.style.display = 'none');
+    document.body.style.overflow = 'auto';
   }
 });
