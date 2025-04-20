@@ -28,5 +28,85 @@
     "imagenes": ["SI1001.avif", "SI1002.avif", "SI1003.avif", "SI1004.avif", "SI1005.avif", "SI1006.avif", "SI1007.avif", "SI1008.avif", "SI1009.avif"],
     "descripcion": "Aqui va otra cosa.",
     "link": "https://www.airbnb.com/l/j0GCZDLq"
-  }
+  },
+  {
+    "id": 4,
+    "titulo": "Cálido Espacio en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/04/01.avif",
+    "directorio": "./cmpy/04/",
+    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif","06.avif","07.avif","08.avif","09.avif","10.avif"],
+    "descripcion": "Aqui va otra cosa.",
+    "link": "https://www.airbnb.com/l/j0GCZDLq"
+  },
+  {
+    "id": 5,
+    "titulo": "Cálido Espacio en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/05/01.avif",
+    "directorio": "./cmpy/05/",
+    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif","06.avif","07.avif"],
+    "descripcion": "Aqui va otra cosa.",
+    "link": "https://www.airbnb.com/l/j0GCZDLq"
+  },
+  {
+    "id": 6,
+    "titulo": "Cálido Espacio en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/06/01.avif",
+    "directorio": "./cmpy/06/",
+    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif"],
+    "descripcion": "Aqui va otra cosa.",
+    "link": "https://www.airbnb.com/l/j0GCZDLq"
+  },
+  {
+    "id": 7,
+    "titulo": "Cálido Espacio en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/07/01.avif",
+    "directorio": "./cmpy/07/",
+    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif","06.avif","07.avif","08.avif","09.avif","10.avif","11.avif","12.avif"],
+    "descripcion": "Aqui va otra cosa.",
+    "link": "https://www.airbnb.com/l/j0GCZDLq"
+  },
+  {
+    "id": 8,
+    "titulo": "Cálido Espacio en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/08/01.avif",
+    "directorio": "./cmpy/08/",
+    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif","06.avif","07.avif","08.avif","09.avif","10.avif","11.avif"],
+    "descripcion": "Aqui va otra cosa.",
+    "link": "https://www.airbnb.com/l/j0GCZDLq"
+  },
+  {
+    "id": 9,
+    "titulo": "Cálido Espacio en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/09/01.avif",
+    "directorio": "./cmpy/09/",
+    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif","06.avif","07.avif","08.avif","09.avif","10.avif","11.avif","12.avif","13.avif","14.avif"],
+    "descripcion": "Aqui va otra cosa.",
+    "link": "https://www.airbnb.com/l/j0GCZDLq"
+  },
+  {
+    "id": 10,
+    "titulo": "Cálido Espacio en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/10/01.avif",
+    "directorio": "./cmpy/10/",
+    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif","06.avif","07.avif","08.avif","09.avif"],
+    "descripcion": "Aqui va otra cosa.",
+    "link": "https://www.airbnb.com/l/j0GCZDLq"
+  },
+  {
+    "id": 11,
+    "titulo": "Cálido Espacio en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/11/01.avif",
+    "directorio": "./cmpy/11/",
+    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif","06.avif","07.avif","08.avif","09.avif","10.avif"],
+    "descripcion": "Aqui va otra cosa.",
+    "link": "https://www.airbnb.com/l/j0GCZDLq"
+  } 
 ]
