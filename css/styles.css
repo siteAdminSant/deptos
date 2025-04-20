@@ -1,1 +1,220 @@
+ <style>
+    body {
+      font-family: sans-serif;
+      background: url('./cmpy/IMG_5407.jpg') no-repeat center center fixed;
+      background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+      margin: 0;
+      padding: 2rem;
+      color: white; /* Asegura que el texto se vea bien sobre el fondo oscuro */
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para las tarjetas */
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-location {
+      color: gray;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .card a {
+      text-decoration: none;
+      color: white;
+      background: #ff5a5f;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+    }
 
+    /* Estilo del popup */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .popup-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+      position: relative;
+      color: #333; /* <-- Texto oscuro visible sobre fondo blanco */
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;          
+    }
+    .popup-content p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      color: #444; /* gris más suave */
+    }
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333;
+      background: none;
+      border: none;
+      font-weight: bold;
+    }
+    .popup-images img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+    }
+    .horizontal-scroll img {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 300px;
+      height: 250px;
+      object-fit: cover;
+      scroll-snap-align: start;
+      border-radius: 10px;
+    }
+    .fullscreen-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .fullscreen-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px black;
+    }  
+    .popup-content a {
+      text-decoration: none;
+      color: white;
+      background: #ff5a5f;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }    
+    .popup-content a:hover {
+      background: #e0484e;
+    }
+    .contact-banner {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 0.6rem 1rem;
+      border-radius: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+    .contact-banner a img {
+        width: 24px;
+        height: 24px;
+        filter: grayscale(100%) brightness(0);
+        transition: filter 0.3s ease;
+      }
+      .contact-banner a:hover img {
+        filter: none;
+      }
+    /* --- fondo y centrar --- */
+    .fullscreen-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* --- imagen centrada --- */
+    .fullscreen-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px black;
+    }
+    
+    /* --- botón de cerrar --- */
+    .fullscreen-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 2rem; color: white;
+      cursor: pointer;
+    }
+    
+    /* --- flechas --- */
+    .fullscreen-prev,
+    .fullscreen-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.2);
+      border: none;
+      font-size: 2rem;
+      color: white;
+      padding: 0.5rem 0.8rem;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .fullscreen-prev { left: 2rem; }
+    .fullscreen-next { right: 2rem; }
+
+  </style>
