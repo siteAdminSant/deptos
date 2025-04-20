@@ -18,15 +18,5 @@
     "imagenes": ["LD001.jpeg", "LD002.jpeg", "LD003.jpeg", "LD004.jpeg", "LD005.jpeg", "LD006.jpeg", "LD007.jpeg", "LD008.jpeg", "LD009.jpeg"],
     "descripcion": "Este hermoso departamento en Recoleta es perfecto para quienes buscan una experiencia única en Buenos Aires.",
     "link": "https://www.airbnb.com/l/j0GCZDLq"
-  },
-  {
-    "id": 3,
-    "titulo": "OtraCosa",
-    "ubicacion": "Santiago",
-    "imagen": "./cmpy/rs/RS002.avif",
-    "directorio": "./cmpy/ldChr/",
-    "imagenes": ["LD001.jpeg", "LD002.jpeg", "LD003.jpeg", "LD004.jpeg", "LD005.jpeg", "LD006.jpeg", "LD007.jpeg", "LD008.jpeg", "LD009.jpeg"],
-    "descripcion": "Este hermoso departamento en Recoleta es perfecto para quienes buscan una experiencia única en Buenos Aires.",
-    "link": "https://www.airbnb.com/l/j0GCZDLq"
   }
 ]
