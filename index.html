@@ -176,6 +176,52 @@
       .contact-banner a:hover img {
         filter: none;
       }
+    /* --- fondo y centrar --- */
+    .fullscreen-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* --- imagen centrada --- */
+    .fullscreen-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px black;
+    }
+    
+    /* --- botón de cerrar --- */
+    .fullscreen-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 2rem; color: white;
+      cursor: pointer;
+    }
+    
+    /* --- flechas --- */
+    .fullscreen-prev,
+    .fullscreen-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.2);
+      border: none;
+      font-size: 2rem;
+      color: white;
+      padding: 0.5rem 0.8rem;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .fullscreen-prev { left: 2rem; }
+    .fullscreen-next { right: 2rem; }
+
   </style>
 </head>
 <body>
@@ -320,10 +366,52 @@
     function closeFullImage() {
       document.getElementById("fullscreenModal").style.display = "none";
     }
+    let currentImages = [];
+let currentIndex  = 0;
+
+// Cuando abras el popup1, rellena el array con sus imágenes:
+function openPopup(id) {
+  document.getElementById('popup' + id).style.display = 'flex';
+  // recolecta URLs de las miniaturas
+  currentImages = Array.from(
+    document.querySelectorAll('#popup' + id + ' .horizontal-scroll img')
+  ).map(img => img.src);
+}
+
+// Muestra imagen ampliada y guarda índice
+function showFullImage(src) {
+  currentIndex = currentImages.indexOf(src);
+  document.getElementById('fullscreenImage').src = src;
+  document.getElementById('fullscreenModal').style.display = 'flex';
+}
+
+// Navegación
+function prevImage() {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  document.getElementById('fullscreenImage').src = currentImages[currentIndex];
+}
+function nextImage() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  document.getElementById('fullscreenImage').src = currentImages[currentIndex];
+}
+
+// Cierra la vista ampliada
+function closeFullImage() {
+  document.getElementById('fullscreenModal').style.display = 'none';
+}
+
   </script>
   <!-- Imagen ampliada -->
 <div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullImage()">
   <img id="fullscreenImage" src="" alt="Imagen ampliada" />
 </div>
+
+<div id="fullscreenModal" class="fullscreen-modal">
+  <button class="fullscreen-close" onclick="closeFullImage()">×</button>
+  <button class="fullscreen-prev" onclick="prevImage()">❮</button>
+  <img id="fullscreenImage" src="" alt="Imagen ampliada" />
+  <button class="fullscreen-next" onclick="nextImage()">❯</button>
+</div>
+  
 </body>
 </html>
