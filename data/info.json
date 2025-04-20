@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "titulo": "Estilo y confort en Santiago",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/LdCocrhanHome.jpeg"
+  },
+  {
+    "id": 2,
+    "titulo": "Moderno departamento casco historico",
+    "ubicacion": "Santiago",
+    "imagen": "./cmpy/rs/RS002.avif"
+  }
+]
