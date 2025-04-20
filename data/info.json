@@ -14,8 +14,8 @@
     "titulo": "Moderno departamento casco historico",
     "ubicacion": "Santiago",
     "imagen": "./cmpy/rs/RS002.avif",
-    "directorio": "./cmpy/ldChr/",
-    "imagenes": ["LD001.jpeg", "LD002.jpeg", "LD003.jpeg", "LD004.jpeg", "LD005.jpeg", "LD006.jpeg", "LD007.jpeg", "LD008.jpeg", "LD009.jpeg"],
+    "directorio": "./cmpy/rs/",
+    "imagenes": ["RS002.avif","RS003.avif","RS004.avif","RS005.avif","RS006.avif","RS007.avif","RS008.avif","RS009.avif","RS010.avif"],
     "descripcion": "Aqui va otra cosa.",
     "link": "https://www.airbnb.com/l/j0GCZDLq"
   },
