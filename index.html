@@ -97,6 +97,22 @@
       object-fit: cover;
       margin-bottom: 1rem;
     }
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+    }
+    .horizontal-scroll img {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 300px;
+      height: 250px;
+      object-fit: cover;
+      scroll-snap-align: start;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -146,20 +162,19 @@
     </div>
   </div>
 
-  <!-- Popup 1 -->
-  <div id="popup1" class="popup">
-    <div class="popup-content">
-      <button class="popup-close" onclick="closePopup(1)">×</button>
-      <h2>Depto en Santiago</h2>
-      <div class="popup-images">
-        <img src="./cmpy/LdcocrhnaEntrada.jpeg" alt="Entrada">
-        <img src="./cmpy/LdCocrhanAlcoba.jpeg" alt="Alcoba">
-         <img src="./cmpy/LdCocrhanHome.jpeg" alt="Home">
-      </div>
-      <p>Este hermoso departamento en Recoleta es perfecto para quienes buscan una experiencia única en Buenos Aires.</p>
-      <a href="https://airbnb.com" target="_blank">Ver en Airbnb</a>
+<div id="popup1" class="popup">
+  <div class="popup-content">
+    <button class="popup-close" onclick="closePopup(1)">×</button>
+    <h2>Depto en Santiago</h2>
+    <div class="popup-images horizontal-scroll">
+      <img src="./cmpy/LdcocrhnaEntrada.jpeg" alt="Entrada">
+      <img src="./cmpy/LdCocrhanAlcoba.jpeg" alt="Alcoba">
+      <img src="./cmpy/LdCocrhanHome.jpeg" alt="Home">
     </div>
+    <p>Este hermoso departamento en Recoleta es perfecto para quienes buscan una experiencia única en Buenos Aires.</p>
+    <a href="https://airbnb.com" target="_blank">Ver en Airbnb</a>
   </div>
+</div>
 
   <!-- Popup 2 -->
   <div id="popup2" class="popup">
