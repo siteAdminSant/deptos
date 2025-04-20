@@ -34,6 +34,27 @@
       document.getElementById('fullscreenModal').style.display = 'flex';
     }
 
+// Cerrar popup al hacer clic fuera del contenido
+document.addEventListener('click', function (event) {
+  const popups = document.querySelectorAll('.popup');
+  popups.forEach(popup => {
+    if (popup.style.display === 'flex' && !popup.querySelector('.popup-content').contains(event.target) && !event.target.classList.contains('card')) {
+      popup.style.display = 'none';
+    }
+  });
+});
+
+// Cerrar popup con la tecla Escape
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    const popups = document.querySelectorAll('.popup');
+    popups.forEach(popup => {
+      popup.style.display = 'none';
+    });
+  }
+});
+
+
     // Navegación
     function prevImage() {
       currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
