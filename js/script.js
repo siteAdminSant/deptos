@@ -8,7 +8,8 @@ fetch('./data/info.json')
       // Crear tarjeta
       const card = document.createElement('div');
       card.className = 'card';
-      card.setAttribute('onclick', `openPopup(${depto.id})`);
+      card.addEventListener('click', () => openPopup(depto.id));
+      //card.setAttribute('onclick', `openPopup(${depto.id})`);
       card.innerHTML = `
         <img src="${depto.imagen}" alt="${depto.titulo}">
         <div class="card-content">
@@ -47,7 +48,11 @@ fetch('./data/info.json')
 
 // Funciones para abrir/cerrar popups
 function openPopup(id) {
-  document.getElementById(`popup${id}`).style.display = 'flex';
+  const popup = document.getElementById(`popup-${id}`);
+  if (popup) {
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+  }
 }
 
 function closePopup(id) {
@@ -56,6 +61,7 @@ function closePopup(id) {
 
 // Cerrar popup con clic fuera
 document.addEventListener('click', function (event) {
+  console.log('Abriendo popup de ID:');
   const popups = document.querySelectorAll('.popup');
   popups.forEach(popup => {
     if (popup.style.display === 'flex' &&
