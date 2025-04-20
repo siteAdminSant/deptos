@@ -26,8 +26,13 @@ fetch('./data/info.json')
       popup.className = 'popup';
       popup.id = `popup${depto.id}`;
 
-      const imagenesHTML = depto.imagenes.map(img => `
+      /*const imagenesHTML = depto.imagenes.map(img => `
         <img src="${depto.directorio}${img}" alt="Foto" onclick="showFullImage(this.src)" />
+      `).join('');*/
+      const imagenesHTML = depto.imagenes.map((img, index) => `
+        <img src="${depto.directorio}${img}" alt="Foto" onclick="openLightbox(${JSON.stringify(
+          depto.imagenes.map(imgName => depto.directorio + imgName)
+        )}, ${index})" />
       `).join('');
 
       popup.innerHTML = `
@@ -58,4 +63,41 @@ function showFullImage(src) {
   const win = window.open("", "_blank");
   win.document.write(`<img src="${src}" style="width:100%">`);
 }
+
+let currentImageIndex = 0;
+let currentImageList = [];
+
+function openLightbox(images, index) {
+  currentImageList = images;
+  currentImageIndex = index;
+  updateLightboxImage();
+  document.getElementById('lightbox').style.display = 'flex';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + currentImageList.length) % currentImageList.length;
+  updateLightboxImage();
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % currentImageList.length;
+  updateLightboxImage();
+}
+
+function updateLightboxImage() {
+  const imgElement = document.getElementById('lightbox-img');
+  imgElement.src = currentImageList[currentImageIndex];
+}
+
+// Cerrar con ESC
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
 
