@@ -48,3 +48,30 @@
     function closeFullImage() {
       document.getElementById('fullscreenModal').style.display = 'none';
     }
+
+
+// Carga deptos dinamicamente
+
+fetch('data/departamentos.json')
+  .then(response => response.json())
+  .then(departamentos => {
+    const gallery = document.getElementById('gallery');
+
+    departamentos.forEach(depto => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('onclick', `openPopup(${depto.id})`);
+
+      card.innerHTML = `
+        <img src="${depto.imagen}" alt="${depto.titulo}">
+        <div class="card-content">
+          <div class="card-title">${depto.titulo}</div>
+          <div class="card-location">${depto.ubicacion}</div>
+        </div>
+      `;
+
+      gallery.appendChild(card);
+    });
+  })
+  .catch(error => console.error('Error al cargar los departamentos:', error));
+
