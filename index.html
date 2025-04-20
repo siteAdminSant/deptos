@@ -167,9 +167,9 @@
     <button class="popup-close" onclick="closePopup(1)">×</button>
     <h2>Depto en Santiago</h2>
     <div class="popup-images horizontal-scroll">
-      <img src="./cmpy/LdcocrhnaEntrada.jpeg" alt="Entrada">
-      <img src="./cmpy/LdCocrhanAlcoba.jpeg" alt="Alcoba">
-      <img src="./cmpy/LdCocrhanHome.jpeg" alt="Home">
+      <img src="./cmpy/LdcocrhnaEntrada.jpeg" alt="Entrada" onclick="showFullImage(this.src)" />
+      <img src="./cmpy/LdCocrhanAlcoba.jpeg" alt="Alcoba" onclick="showFullImage(this.src)" />
+      <img src="./cmpy/LdCocrhanHome.jpeg" alt="Home" onclick="showFullImage(this.src)" />
     </div>
     <p>Este hermoso departamento en Recoleta es perfecto para quienes buscan una experiencia única en Buenos Aires.</p>
     <a href="https://airbnb.com" target="_blank">Ver en Airbnb</a>
@@ -213,5 +213,9 @@
       document.getElementById('popup' + id).style.display = 'none';
     }
   </script>
+  <!-- Imagen ampliada -->
+<div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullImage()">
+  <img id="fullscreenImage" src="" alt="Imagen ampliada" />
+</div>
 </body>
 </html>
