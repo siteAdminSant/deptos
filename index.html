@@ -1,34 +1,23 @@
-<!-- ... parte superior igual ... -->
-<main>
-  <div class="search-bar">
-    <input type="text" placeholder="Buscar por nombre o referencia..." />
-    <button>Buscar</button>
-  </div>
+<!-- Dentro de tu <body>, justo después del <h1> -->
 
-  <div class="filters" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px;">
-    <input type="number" placeholder="Precio mínimo" style="padding: 8px; width: 140px;" />
-    <input type="number" placeholder="Precio máximo" style="padding: 8px; width: 140px;" />
-    <input type="text" placeholder="Ubicación" style="padding: 8px; width: 140px;" />
-    <select style="padding: 8px; width: 140px;">
-      <option value="">Tipo</option>
-      <option value="arriendo">Arriendo</option>
-      <option value="compra">Compra</option>
-    </select>
-    <select style="padding: 8px; width: 140px;">
-      <option value="">Habitaciones</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4+</option>
-    </select>
-  </div>
+<h1>Departamentos que gestiono</h1>
 
-  <div class="gallery">
-    <img src="https://via.placeholder.com/300x200" alt="Depto 1"
-      onclick="openModal('Depto 1', 'https://via.placeholder.com/600x400', 'https://via.placeholder.com/600x401', '#')" />
-    <img src="https://via.placeholder.com/300x200" alt="Depto 2"
-      onclick="openModal('Depto 2', 'https://via.placeholder.com/600x402', 'https://via.placeholder.com/600x403', '#')" />
-    <img src="https://via.placeholder.com/300x200" alt="Depto 3"
-      onclick="openModal('Depto 3', 'https://via.placeholder.com/600x404', 'https://via.placeholder.com/600x405', '#')" />
-  </div>
-</main>
+<!-- Filtros y búsqueda -->
+<div style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <input type="text" placeholder="Buscar por nombre..." style="padding: 0.5rem; border-radius: 5px; border: none; width: 180px;" />
+  <input type="number" placeholder="Precio mínimo" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;" />
+  <input type="number" placeholder="Precio máximo" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;" />
+  <input type="text" placeholder="Ubicación" style="padding: 0.5rem; border-radius: 5px; border: none; width: 160px;" />
+  <select style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
+    <option value="">Tipo</option>
+    <option value="arriendo">Arriendo</option>
+    <option value="compra">Compra</option>
+  </select>
+  <select style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
+    <option value="">Habitaciones</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4+</option>
+  </select>
+</div>
