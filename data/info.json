@@ -95,7 +95,7 @@
     "ubicacion": "Santiago",
     "imagen": "./cmpy/10/01.avif",
     "directorio": "./cmpy/10/",
-    "imagenes": ["01.avif", "02.avif","03.avif","04.avif","05.avif","06.avif","07.avif","08.avif","09.avif"],
+    "imagenes": ["01.avif", "02.avif","03.avif","04.jpeg","05.jpeg","06.avif","07.avif","08.avif","09.avif"],
     "descripcion": "Aqui va otra cosa.",
     "link": "https://www.airbnb.com/l/j0GCZDLq"
   },
