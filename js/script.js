@@ -13,6 +13,7 @@ fetch('./data/info.json')
         <div class="card-content">
           <div class="card-title">${depto.titulo}</div>
           <div class="card-location">${depto.ubicacion}</div>
+          <div class="card-price">Desde $${depto.precio.toLocaleString('es-CL')} CLP</div>
         </div>
       `;
       card.addEventListener('click', () => openPopup(depto.id));
