@@ -1,10 +1,10 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: url('../cmpy/IMG_5407.jpg') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 2rem;
-  color: white;
+  color: #222;
 }
 
 h1 {
@@ -35,17 +35,14 @@ h1 {
 }
 
 .card-title {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #222; /* Más oscuro para mejor contraste */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a; /* Más contraste, moderno */
 }
 
 .card-location {
-  color: #555;
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  color: #555;
 }
 
 .card:hover {
@@ -109,18 +106,17 @@ h1 {
 }
 
 .popup-content p {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  color: #444;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 .popup-content h2 {
-  font-size: 1.8rem;
-  color: #222; /* texto oscuro para buen contraste sobre blanco */
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
 }
 
 .popup-close {
