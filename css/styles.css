@@ -23,7 +23,7 @@ h1 {
   overflow-x: hidden;
 }
 
-.cardxxxxx {
+.card {
   flex: 0 0 auto;
   scroll-snap-align: start;
   width: 280px;
@@ -34,7 +34,7 @@ h1 {
   transition: transform 0.2s ease;
   cursor: pointer;
 }
-.card {
+/*.card {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -45,7 +45,7 @@ h1 {
 }
 .card:hover {
   transform: scale(1.02);
-}
+}*/
 
 .card-title {
   font-size: 1.25rem;
