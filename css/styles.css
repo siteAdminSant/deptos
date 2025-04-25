@@ -53,10 +53,10 @@ h1 {
   color: #1a1a1a; /* Más contraste, moderno */
 }
 
-.card-location {
+/*.card-location {
   font-size: 0.9rem;
   color: #555;
-}
+}*/
 
 .card:hover {
   transform: scale(1.02);
