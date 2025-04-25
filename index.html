@@ -5,35 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <title>Departamentos en Airbnb</title>
 </head>
 <body>
-  <!-- Banner de contacto -->
-    <div class="contact-banner">
-        <a href="https://wa.me/56931962245?text=Hola%2C%20vi%20tu%20sitio%20web%20y%20me%20interesa%20saber%20más%20sobre%20los%20departamentos" target="_blank" title="WhatsApp">
-         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" />
+  
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-indigo-600">NombreSitioOAlgo</a>
+      <nav class="space-x-4">
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Inicio</a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Venta</a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Arriendo</a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Sobre Nosotros</a>
+        <a href="#" class="text-gray-600 hover:text-indigo-600">Contacto</a>
+        <a href="https://wa.me/56931962245?text=Hola%2C%20vi%20tu%20sitio%20web%20y%20me%20interesa%20saber%20más%20sobre%20los%20departamentos" 
+          target="_blank" 
+          title="WhatsApp"
+          class="inline-flex items-center">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" 
+              alt="WhatsApp" 
+              class="w-6 h-6" />
         </a>
-   </div>
-  <h1>Departamentos Disponibles</h1>
+      </nav>
+    </div>
+  </header>
+
   <!-- Filtros y búsqueda -->
 <div style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
- <!-- <input type="text" placeholder="Buscar por nombre..." style="padding: 0.5rem; border-radius: 5px; border: none; width: 180px;" />
-  <input type="number" placeholder="Precio mínimo" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;" />
-  <input type="number" placeholder="Precio máximo" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;" />
-  <input type="text" placeholder="Ubicación" style="padding: 0.5rem; border-radius: 5px; border: none; width: 160px;" />  -->
   <select style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
-    <option value="">Tipo</option>
-    <option value="arriendo">Arriendo</option>
-    <option value="compra">Compra</option>
-  </select>
-  <select style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
-    <option value="">Habitaciones</option>
+    <option value="">Personas</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4+</option>
   </select>
+  <select style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
+    <option value="">Precio desde</option>
+    <option value="1">10000</option>
+    <option value="2">20000</option>
+    <option value="3">30000</option>
+    <option value="4">40000+</option>
+  </select>
 </div>
+
+  <section class="bg-indigo-600 text-white py-16 bg-cover bg-center" style="background-image: url('./cmpy/IMG_5407.jpg');">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Home Rent</h1>
+      <p class="text-lg md:text-xl mb-6">Encuentra el sitio perfecto para tu proxima estadia.</p>
+    <!-- <a href="#" class="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-full shadow hover:bg-gray-100 transition">
+        Ver propiedades
+      </a>*/  -->
+    </div>
+  </section>
 
   <div class="gallery" id="gallery"></div>
   <div id="popups-container"></div>
