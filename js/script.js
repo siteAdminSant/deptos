@@ -128,9 +128,9 @@ document.getElementById('capacity-filter').addEventListener('change', function()
 function filterDepartmentsByCapacity(capacity) {
   const allCards = document.querySelectorAll('.card');
   allCards.forEach(card => {
-    const deptoCapacity = parseInt(card.querySelector('.depto-capacidad').value);
+    const deptoCapacity = parseInt(card.querySelector('.depto-capacidad').textContent);
     
-    if (capacity === 4 && deptoCapacity >= 4 || deptoCapacity === capacity || deptoCapacity === 0) {
+    if (capacity === 4 && deptoCapacity >= 4 || deptoCapacity === capacity ) {
       card.style.display = 'block';  // Mostrar el departamento
     } else {
       card.style.display = 'none';  // Ocultar el departamento
@@ -149,10 +149,23 @@ function filterDepartmentsByPrice(price) {
   allCards.forEach(card => {
     const deptoPrice = parseInt(card.querySelector('.card-price').textContent.replace(/\D/g, ''));
     
-    if (deptoPrice <= price || deptoPrice === 0) {
+    if (deptoPrice <= price) {
       card.style.display = 'block';  // Mostrar el departamento
     } else {
       card.style.display = 'none';  // Ocultar el departamento
     }
   });
 }
+
+
+document.getElementById('reset-filters').addEventListener('click', function() {
+  // Restablecer el filtro de capacidad
+  document.getElementById('capacity-filter').value = '0';
+
+  // Restablecer el filtro de precio
+  document.getElementById('price-filter').value = '0';
+
+  // Volver a mostrar todos los departamentos
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach(card => card.style.display = 'block');
+});
