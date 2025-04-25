@@ -22,7 +22,7 @@ h1 {
   overflow-x: hidden;
 }
 
-.card {
+.cardxxxxx {
   flex: 0 0 auto;
   scroll-snap-align: start;
   width: 280px;
@@ -32,6 +32,18 @@ h1 {
   overflow: hidden;
   transition: transform 0.2s ease;
   cursor: pointer;
+}
+.card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
 }
 
 .card-title {
@@ -239,6 +251,21 @@ h1 {
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.properties-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.property-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
 }
 
 /* RESPONSIVE STYLES */
