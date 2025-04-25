@@ -1,7 +1,7 @@
 body {
   font-family: 'Inter', sans-serif;
-  background: url('../cmpy/IMG_5407.jpg') no-repeat center center fixed;
-  background-size: cover;
+  /*background: url('../cmpy/IMG_5407.jpg') no-repeat center center fixed;*/
+  /*background-size: cover;*/
   margin: 0;
   padding: 2rem;
   color: #222;
@@ -34,18 +34,6 @@ h1 {
   transition: transform 0.2s ease;
   cursor: pointer;
 }
-/*.card {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.card:hover {
-  transform: scale(1.02);
-}*/
 
 .card-title {
   font-size: 1.25rem;
