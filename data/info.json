@@ -3,9 +3,9 @@
         "id": "1",
         "codigo": "DPT_001",
         "titulo": "Funcional y cómodo Home Studio",
-        "ubicacion": "Centro",
-        "precio": "10000",
-        "imagen": "./cmpy/01/01.jpeg",
+        "ubicacion": "Santiago Centro",
+        "precio": "25000",
+        "imagen": "./cmpy/01/01.avif",
         "directorio": "./cmpy/01/",
         "imagenes": [
             "01.jpeg",
@@ -19,14 +19,14 @@
             "09.jpeg"
         ],
         "descripcion": "Este acogedor y funcional home studio, ubicado a pasos de Parque Almagro, es la opción perfecta para quienes buscan comodidad y una alternativa práctica y accesible en la ciudad. Totalmente equipado y con una ubicación privilegiada, tendrás fácil acceso al metro, comercio y puntos clave de Santiago; ideal para viajeros o quienes buscan un lugar bien conectado sin renunciar al confort. ¡La opción ideal al mejor precio!",
-        "link": "https://es-l.airbnb.com/rooms/1385070325447469865?guests=1&adults=1&s=67&unique_share_id=3c58c92d-1f63-4dfa-a6fb-77ba476b8213"
+        "link": "https://es-l.airbnb.com/rooms/1385070325447469865?guests=1&adults=1&s=67&unique_share_id=977d6852-4ac3-427f-85e3-73dfece12580"
     },
     {
         "id": "2",
         "codigo": "DPT_002",
         "titulo": "Estilo y confort en Santiago",
-        "ubicacion": "Santiago",
-        "precio": "41000",
+        "ubicacion": "Santiago Centro",
+        "precio": "37000",
         "imagen": "./cmpy/02/01.avif",
         "directorio": "./cmpy/02/",
         "imagenes": [
@@ -41,14 +41,14 @@
             "09.avif"
         ],
         "descripcion": "¡Siéntete como en casa en el casco histórico de Santiago! Este moderno departamento combina comodidad y estilo en un entorno acogedor. Con acabados contemporáneos, espacios luminosos y un diseño pensado para tu bienestar, disfrutarás de un ambiente agradable y funcional. Ubicado en una zona estratégica, estarás a pasos de la riqueza cultural y patrimonial de la ciudad, con acceso a servicios, áreas verdes y transporte. Ideal para convertir tu viaje en una gran experiencia.",
-        "link": "https://es-l.airbnb.com/rooms/1294869077866584619?guests=1&adults=1&s=67&unique_share_id=6b2eb002-a2da-4029-9511-fe4b24768bf6"
+        "link": "https://es-l.airbnb.com/rooms/1294869077866584619?guests=1&adults=1&s=67&unique_share_id=55f7380e-8f4a-4aa8-9491-f37cd37fdf79"
     },
     {
         "id": "3",
         "codigo": "DPT_003",
         "titulo": "Moderno y cómodo departamento Santiago",
-        "ubicacion": "Ñuñoa",
-        "precio": "10000",
+        "ubicacion": "Santiago Centro",
+        "precio": "33000",
         "imagen": "./cmpy/03/01.avif",
         "directorio": "./cmpy/03/",
         "imagenes": [
@@ -62,15 +62,15 @@
             "08.avif",
             "09.avif"
         ],
-        "descripcion": "Disfruta de la sencillez de este alojamiento tranquilo y céntrico.Totalmente amoblado y equipado con todo lo que necesitas para tener una buena estancia en Santiago de Chile.Departamento nuevo con buena conexión a Internet, cercano a estación de metro Santa Isabel y al casco histórico de Santiago.Con living y dormitorio en espacios separados, cocina equipada, living-comedor, terraza, lavadora, cama de 2 plazas.Opción de estacionamiento en el edificio según disponibilidad, sin costo.",
-        "link": "https://es-l.airbnb.com/rooms/939944345298420133?guests=1&adults=1&s=67&unique_share_id=d49439c2-feca-449b-8c31-654678f702c5"
+        "descripcion": "Disfruta de la sencillez de este alojamiento tranquilo y céntrico. Totalmente amoblado y equipado con todo lo que necesitas para tener una buena estancia en Santiago de Chile. Departamento como nuevo con buena conexión a Internet, cercano a estación de metro Santa Isabel y al casco histórico de Santiago.Con living y dormitorio en espacios separados, cocina equipada, living-comedor, terraza, lavadora, cama de 2 plazas.",
+        "link": "https://es-l.airbnb.com/rooms/939944345298420133?guests=1&adults=1&s=67&unique_share_id=4a214588-ab6f-42d8-9efd-4962c9e870fd "
     },
     {
         "id": "4",
         "codigo": "DPT_004",
         "titulo": "Cálido Espacio en Santiago",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Santiago Centro",
+        "precio": "36000",
         "imagen": "./cmpy/04/01.avif",
         "directorio": "./cmpy/04/",
         "imagenes": [
@@ -85,15 +85,15 @@
             "09.avif",
             "10.avif"
         ],
-        "descripcion": "¡Bienvenidos a este encantador departamento de 1 dormitorio cercano a metro Santa Isabel en Santiago! Con una decoración moderna y todas las comodidades, ofrece una experiencia acogedora para tu estadía. Explora los vibrantes alrededores, desde restaurantes locales y atracciones culturales en Barrio Italia. Con fácil acceso al transporte público, es el punto de partida perfecto para descubrir todo lo que esta dinámica ciudad tiene para ofrecer.",
+        "descripcion": "Encantador departamento de 1 dormitorio cercano a metro Santa Isabel en Santiago. Con una decoración moderna y todas las comodidades, ofrece una experiencia acogedora para tu estadía. Explora los vibrantes alrededores, desde restaurantes locales  y atracciones culturales en Barrio Italia. Con fácil acceso al transporte público, es el punto de partida perfecto para descubrir todo lo que esta dinámica ciudad tiene para ofrecer.",
         "link": "https://www.airbnb.com/l/hcrYnGFt"
     },
     {
         "id": "5",
         "codigo": "DPT_005",
         "titulo": "Depto en el Corazón de Santiago",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Santiago Centro",
+        "precio": "38000",
         "imagen": "./cmpy/05/01.avif",
         "directorio": "./cmpy/05/",
         "imagenes": [
@@ -105,15 +105,15 @@
             "06.avif",
             "07.avif"
         ],
-        "descripcion": "Disfruta de una experiencia con estilo en nuestro acogedor y moderno departamento, ideal para quienes desean disfrutar de una estadía cómoda y elegante en el centro de la ciudad! Este espacio está pensado tanto para viajeros de negocios como para turistas, con una ubicación privilegiada cerca de los principales puntos de interés.Departamento de un dormitorio cómodamente diseñado para que te sientas como en casa.",
+        "descripcion": "Disfruta de una experiencia con estilo en nuestro acogedor y moderno departamento, ideal para quienes desean disfrutar de una estadía cómoda y elegante en el centro de la ciudad! Este espacio está pensado tanto para viajeros de negocios como para turistas, con una ubicación privilegiada cerca de los principales puntos de interés. Departamento de un dormitorio cómodamente diseñado para que te sientas como en casa.",
         "link": "https://www.airbnb.com/l/VS1fSFf1"
     },
     {
         "id": "6",
         "codigo": "DPT_006",
         "titulo": "Dpto cercano a Estadio Nacional",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Ñuñoa",
+        "precio": "45000",
         "imagen": "./cmpy/06/01.avif",
         "directorio": "./cmpy/06/",
         "imagenes": [
@@ -130,8 +130,8 @@
         "id": "7",
         "codigo": "DPT_007",
         "titulo": "Estancia única y exclusiva!",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Vitacura",
+        "precio": "90000",
         "imagen": "./cmpy/07/01.avif",
         "directorio": "./cmpy/07/",
         "imagenes": [
@@ -149,14 +149,14 @@
             "12.avif"
         ],
         "descripcion": "Experimenta una estadía confortable con amenidades y diversión. Contamos con un estacionamiento para un vehículo pequeño. Sin duda el sector de Parque Arauco resolverá gran parte de tu itinerario para aprovechar el tiempo al máximo, con todo lo que necesites para disfrutar de tu viaje; excelente locomoción para transportarte a cualquier punto de la ciudad, al frente de tu alojamiento cuentas con el Mall Parque Arauco con una amplia gama de tiendas de lujo, cines, restaurantes etc.",
-        "link": "https://www.airbnb.com/l/4LFDiq4q"
+        "link": "https://www.airbnb.com/l/lwJDeJB7"
     },
     {
         "id": "8",
         "codigo": "DPT_008",
         "titulo": "Home Studio Ñuñoa Zona Segura cerca Barrio Italia",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Ñuñoa",
+        "precio": "37000",
         "imagen": "./cmpy/08/01.avif",
         "directorio": "./cmpy/08/",
         "imagenes": [
@@ -179,8 +179,8 @@
         "id": "9",
         "codigo": "DPT_009",
         "titulo": "Loft con hermosa vista en Ñuñoa",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Ñuñoa",
+        "precio": "38000",
         "imagen": "./cmpy/09/01.avif",
         "directorio": "./cmpy/09/",
         "imagenes": [
@@ -206,8 +206,8 @@
         "id": "10",
         "codigo": "DPT_010",
         "titulo": "Mall Parque Arauco, MUT - Corazón de las Condes",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Las Condes",
+        "precio": "57000",
         "imagen": "./cmpy/10/01.avif",
         "directorio": "./cmpy/10/",
         "imagenes": [
@@ -228,8 +228,8 @@
         "id": "11",
         "codigo": "DPT_011",
         "titulo": "Tu refugio en Santiago",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Santiago Centro",
+        "precio": "36000",
         "imagen": "./cmpy/11/01.avif",
         "directorio": "./cmpy/11/",
         "imagenes": [
@@ -251,8 +251,8 @@
         "id": "12",
         "codigo": "DPT_012",
         "titulo": "Tu segundo hogar, en el corazón de Santiago",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Santiago Centro",
+        "precio": "40000",
         "imagen": "./cmpy/12/01.avif",
         "directorio": "./cmpy/12/",
         "imagenes": [
@@ -278,8 +278,8 @@
         "id": "13",
         "codigo": "DPT_013",
         "titulo": "Confortable Dpto Providencia Metro Los Leones",
-        "ubicacion": "Centro",
-        "precio": "10000",
+        "ubicacion": "Providencia",
+        "precio": "60000",
         "imagen": "./cmpy/13/01.avif",
         "directorio": "./cmpy/13/",
         "imagenes": [
@@ -295,7 +295,8 @@
             "10.avif",
             "11.avif",
             "12.avif",
-            "13.avif"
+            "13.avif",
+            "14.avif"
         ],
         "descripcion": "¡Bienvenidos a tu hogar en Santiago! Este acogedor departamento es la elección perfecta para quienes buscan comodidad y una ubicación estratégica. Disfruta de la comodidad de estar a pasos del Costanera Center con tiendas, restaurantes y mucho más, ¡todo al alcance de tu mano! Ya sea que vengas a descubrir Santiago o por trabajo, aquí encontrarás todo lo que necesitas para una estadía cómoda y sin preocupaciones. ¡Reserva ahora y vive Santiago con la mejor ubicación posible!",
         "link": "https://www.airbnb.com/l/HsggLnIg"
