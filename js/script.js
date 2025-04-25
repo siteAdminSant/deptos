@@ -137,3 +137,22 @@ function filterDepartmentsByCapacity(capacity) {
     }
   });
 }
+
+
+document.getElementById('price-filter').addEventListener('change', function() {
+  const selectedPrice = parseInt(this.value);
+  filterDepartmentsByPrice(selectedPrice);
+});
+
+function filterDepartmentsByPrice(price) {
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach(card => {
+    const deptoPrice = parseInt(card.querySelector('.card-price').textContent.replace(/\D/g, ''));
+    
+    if (deptoPrice <= price) {
+      card.style.display = 'block';  // Mostrar el departamento
+    } else {
+      card.style.display = 'none';  // Ocultar el departamento
+    }
+  });
+}
