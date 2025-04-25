@@ -13,7 +13,7 @@ fetch('./data/info.json')
         <div class="card-content">
           <div class="card-title">${depto.titulo}</div>
           <div class="card-location">${depto.ubicacion}</div>
-          <div><i class="fas fa-users"></i> ${depto.capacidad}</div>
+          <div class="depto-capacidad"><i class="fas fa-users"></i> ${depto.capacidad}</div>
           <div class="card-price">Desde $${depto.precio.toLocaleString('es-CL')} CLP</div>
         </div>
       `;
@@ -119,3 +119,21 @@ document.addEventListener('keydown', function (event) {
     document.body.style.overflow = 'auto';
   }
 });
+
+document.getElementById('capacity-filter').addEventListener('change', function() {
+  const selectedCapacity = parseInt(this.value);
+  filterDepartmentsByCapacity(selectedCapacity);
+});
+
+function filterDepartmentsByCapacity(capacity) {
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach(card => {
+    const deptoCapacity = parseInt(card.querySelector('.depto-capacidad').textContent);
+    
+    if (capacity === 4 && deptoCapacity >= 4 || deptoCapacity === capacity) {
+      card.style.display = 'block';  // Mostrar el departamento
+    } else {
+      card.style.display = 'none';  // Ocultar el departamento
+    }
+  });
+}
