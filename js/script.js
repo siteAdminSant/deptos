@@ -128,7 +128,7 @@ document.getElementById('capacity-filter').addEventListener('change', function()
 function filterDepartmentsByCapacity(capacity) {
   const allCards = document.querySelectorAll('.card');
   allCards.forEach(card => {
-    const deptoCapacity = parseInt(card.querySelector('.depto-capacidad').textContent);
+    const deptoCapacity = parseInt(card.querySelector('.depto-capacidad').value);
     
     if (capacity === 4 && deptoCapacity >= 4 || deptoCapacity === capacity || deptoCapacity === 0) {
       card.style.display = 'block';  // Mostrar el departamento
