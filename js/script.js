@@ -130,7 +130,7 @@ function filterDepartmentsByCapacity(capacity) {
   allCards.forEach(card => {
     const deptoCapacity = parseInt(card.querySelector('.depto-capacidad').textContent);
     
-    if (capacity === 4 && deptoCapacity >= 4 || deptoCapacity === capacity) {
+    if (capacity === 4 && deptoCapacity >= 4 || deptoCapacity === capacity || deptoCapacity === 0) {
       card.style.display = 'block';  // Mostrar el departamento
     } else {
       card.style.display = 'none';  // Ocultar el departamento
@@ -149,7 +149,7 @@ function filterDepartmentsByPrice(price) {
   allCards.forEach(card => {
     const deptoPrice = parseInt(card.querySelector('.card-price').textContent.replace(/\D/g, ''));
     
-    if (deptoPrice <= price) {
+    if (deptoPrice <= price || deptoPrice === 0) {
       card.style.display = 'block';  // Mostrar el departamento
     } else {
       card.style.display = 'none';  // Ocultar el departamento

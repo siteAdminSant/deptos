@@ -46,13 +46,17 @@
   <div class="bg-white shadow">
       <!-- Filtros y búsqueda -->
       <div style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 10px; justify-content: right;">
-        <select title="Personas" id="capacity-filter" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
+        <label for="capacity-filter" style="margin-right: 10px;">Personas:</label>
+        <select id="capacity-filter" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
+          <option value="0"></option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
-        <select title="Precio desde" id="price-filter" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
+        <label for="price-filter" style="margin-right: 10px;">Precio desde:</label>
+        <select id="price-filter" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
+          <option value="0"></option>
           <option value="30000">30,000</option>
           <option value="60000">60,000</option>
           <option value="90000">90,000</option>
