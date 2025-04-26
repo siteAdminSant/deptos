@@ -73,6 +73,19 @@
       transform: scale(1) rotate(0deg);
     }
   }
+
+  @keyframes fadeInMenu {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-fade-in {
+    animation: fadeInMenu 0.3s ease-out;
+  }
+
+  #mobile-menu {
+    backdrop-filter: blur(5px); /* Para que el fondo detrás del menú se vea ligeramente borroso */
+  }
   </style>
   
 <body class="bg-gray-100">
@@ -104,18 +117,25 @@
     </div>
   </header>
   
-  <!-- Menú Popup para Móviles -->
-  <div id="mobile-menu" class="fixed inset-0 bg-white bg-opacity-95 hidden flex-col items-center justify-center z-50">
-    <button id="close-menu" class="absolute top-4 right-4 text-3xl text-gray-700">&times;</button>
-    <nav class="flex flex-col space-y-6 text-2xl font-semibold text-gray-700">
-      <a href="#sobre-nosotros" class="hover:text-indigo-600" onclick="closeMobileMenu()">Sobre Nosotros</a>
-      <a href="#contacto" class="hover:text-indigo-600" onclick="closeMobileMenu()">Contacto</a>
-      <a href="https://wa.me/56931962245" target="_blank" class="hover:text-green-500">WhatsApp</a>
+<!-- Menú Popup para Móviles Mejorado -->
+<div id="mobile-menu" class="fixed inset-0 bg-white bg-opacity-95 hidden flex flex-col items-center justify-center z-50 rounded-lg shadow-lg animate-fade-in">
+    <button id="close-menu" class="absolute top-6 right-6 text-gray-600 hover:text-red-500 text-3xl font-bold">&times;</button>
+    <nav class="flex flex-col items-center space-y-8 text-gray-700 text-xl font-semibold mt-10">
+      <a href="#sobre-nosotros" class="flex items-center space-x-2 hover:text-indigo-600" onclick="closeMobileMenu()">
+        <span>🏠</span> <span>Sobre Nosotros</span>
+      </a>
+      <a href="#contacto" class="flex items-center space-x-2 hover:text-indigo-600" onclick="closeMobileMenu()">
+        <span>📞</span> <span>Contacto</span>
+      </a>
+      <a href="https://wa.me/56931962245" target="_blank" class="flex items-center space-x-2 hover:text-green-500" onclick="closeMobileMenu()">
+        <span>💬</span> <span>WhatsApp</span>
+      </a>
     </nav>
   </div>
+  
 
   <!-- Script para abrir/cerrar menú móvil -->
-<script>
+  <script>
     const toggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMenuBtn = document.getElementById('close-menu');
@@ -123,7 +143,7 @@
   
     toggle.addEventListener('click', () => {
       mobileMenu.classList.remove('hidden');
-      iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // cambia a X si quieres
+      iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // cambia a X
     });
   
     closeMenuBtn.addEventListener('click', closeMobileMenu);
