@@ -3,229 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Departamentos en Airbnb</title>
-  <meta name="description" content="Renta departamentos acogedores y modernos a través de Airbnb. Encuentra el sitio perfecto para tu próxima estadía.">
-  <meta name="keywords" content="departamentos, arriendo, Airbnb, vacaciones, renta, hospedaje, alojamiento">
-  <meta name="author" content="Home Rent">
+  <title>Home Rent - Departamentos en Airbnb</title>
 
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Home Rent - Departamentos en Airbnb">
-  <meta property="og:description" content="Descubre los mejores departamentos disponibles para arriendo en Airbnb. ¡Reserva tu próxima estadía ahora!">
-  <meta property="og:image" content="https://tusitio.com/cmpy/IMG_5407.jpg">
-  <meta property="og:url" content="https://tusitio.com/">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Home Rent - Departamentos en Airbnb">
-  <meta name="twitter:description" content="Departamentos ideales para tu próximo viaje. Renta fácil y rápido por Airbnb.">
-  <meta name="twitter:image" content="https://tusitio.com/cmpy/IMG_5407.jpg">
-
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .fade-in {
-      animation: fadeIn 0.8s ease forwards;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .popup, #lightbox {
-      transition: all 0.3s ease;
-    }
-    .popup.show, #lightbox.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    #lightbox-img {
-      transition: opacity 0.5s ease;
-    }
+    .fade-in { animation: fadeIn 0.8s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .popup.show, #lightbox.show { opacity: 1; pointer-events: auto; }
+    #lightbox-img { transition: opacity 0.5s ease; }
   </style>
 </head>
 <body class="bg-gray-100">
 
-
-  <!-- Banner -->
-  <section class="bg-indigo-600 text-white py-16 bg-cover bg-center" style="background-image: url('./cmpy/IMG_5407.jpg');">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Home Rent</h1>
-      <p class="text-lg md:text-2xl mb-6">Encuentra el sitio perfecto para tu próxima estadía</p>
-    </div>
-  </section>
-
-  <!-- Filtros -->
-  <div class="container mx-auto px-4 py-6 flex flex-wrap gap-4 justify-center">
-    <div>
-      <label for="capacity-filter" class="mr-2 font-semibold">Personas:</label>
-      <select id="capacity-filter" class="p-2 rounded border">
-        <option value="">Todas</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4+</option>
-      </select>
-    </div>
-    <div>
-      <label for="price-filter" class="mr-2 font-semibold">Precio:</label>
-      <select id="price-filter" class="p-2 rounded border">
-        <option value="">Todos</option>
-        <option value="30000">Hasta 30,000</option>
-        <option value="60000">Hasta 60,000</option>
-        <option value="90000">Hasta 90,000</option>
-      </select>
-    </div>
-    <button id="reset-filters" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Restablecer</button>
+<!-- Banner -->
+<section class="bg-indigo-600 text-white py-16 bg-cover bg-center" style="background-image: url('./cmpy/IMG_5407.jpg');">
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Home Rent</h1>
+    <p class="text-lg md:text-2xl mb-6">Encuentra el sitio perfecto para tu próxima estadía</p>
   </div>
+</section>
 
-  <!-- Galería -->
-  <div id="gallery" class="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- Las tarjetas se insertan dinámicamente -->
+<!-- Filtros -->
+<div class="container mx-auto px-4 py-6 flex flex-wrap gap-4 justify-center">
+  <div>
+    <label for="capacity-filter" class="mr-2 font-semibold">Personas:</label>
+    <select id="capacity-filter" class="p-2 rounded border">
+      <option value="">Todas</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4+</option>
+    </select>
   </div>
-
-  <!-- Popups -->
-  <div id="popups-container"></div>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50 opacity-0">
-    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
-    <img id="lightbox-img" class="max-h-full max-w-full">
-    <div class="absolute bottom-8 flex space-x-4">
-      <button onclick="prevImage()" class="text-white text-3xl">&#8592;</button>
-      <button onclick="nextImage()" class="text-white text-3xl">&#8594;</button>
-    </div>
+  <div>
+    <label for="price-filter" class="mr-2 font-semibold">Precio:</label>
+    <select id="price-filter" class="p-2 rounded border">
+      <option value="">Todos</option>
+      <option value="30000">Hasta 30,000</option>
+      <option value="60000">Hasta 60,000</option>
+      <option value="90000">Hasta 90,000</option>
+    </select>
   </div>
+  <button id="reset-filters" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Restablecer</button>
+</div>
 
-  <script>
-    fetch('./data/info.json')
-      .then(response => response.json())
-      .then(departamentos => {
-        const gallery = document.getElementById('gallery');
-        const popupsContainer = document.getElementById('popups-container');
+<!-- Galería -->
+<div id="gallery" class="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
 
-        departamentos.forEach(depto => {
-          const card = document.createElement('div');
-          card.className = 'card bg-white rounded shadow overflow-hidden transform hover:scale-105 transition-all fade-in';
-          card.innerHTML = `
-            <img src="${depto.imagen}" alt="${depto.titulo}" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h2 class="font-bold text-lg mb-2">${depto.titulo}</h2>
-              <p class="text-gray-600 text-sm mb-1">${depto.ubicacion}</p>
-              <p class="text-gray-600 text-sm mb-1">👥 Capacidad: ${depto.capacidad}</p>
-              <p class="text-indigo-600 font-semibold">Desde $${depto.precio.toLocaleString('es-CL')} CLP</p>
-            </div>
-          `;
-          card.addEventListener('click', () => openPopup(depto.id));
-          gallery.appendChild(card);
+<!-- Popup Reutilizable -->
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-70 hidden z-50 flex items-center justify-center p-4 overflow-auto">
+  <div class="bg-white p-6 rounded shadow-lg max-w-2xl w-full relative">
+    <button onclick="closePopup()" class="absolute top-2 right-2 text-2xl">&times;</button>
+    <div id="popup-content"></div>
+  </div>
+</div>
 
-          const popup = document.createElement('div');
-          popup.className = 'popup hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center opacity-0';
-          popup.id = `popup-${depto.id}`;
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
+  <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+  <img id="lightbox-img" class="max-h-full max-w-full">
+  <div class="absolute bottom-8 flex space-x-4">
+    <button onclick="prevImage()" class="text-white text-3xl">&#8592;</button>
+    <button onclick="nextImage()" class="text-white text-3xl">&#8594;</button>
+  </div>
+</div>
 
-          const fullImageList = depto.imagenes.map(img => `${depto.directorio}${img}`);
-          const imagenesHTML = fullImageList.map((imgSrc, index) => `<img src="${imgSrc}" alt="Foto" onclick='openLightbox(${JSON.stringify(fullImageList)}, ${index})' class="h-40 cursor-pointer">`).join('');
+<script>
+  let departamentos = [];
+  let currentImageIndex = 0;
+  let currentImageList = [];
 
-          popup.innerHTML = `
-            <div class="bg-white p-6 rounded shadow-lg max-w-2xl w-full overflow-y-auto max-h-[90vh]">
-              <button onclick="closePopup(${depto.id})" class="text-black float-right">&times;</button>
-              <h2 class="text-2xl font-bold mb-4">${depto.titulo}</h2>
-              <div class="flex overflow-x-auto space-x-4 mb-4">${imagenesHTML}</div>
-              <p class="mb-4">${depto.descripcion}</p>
-              <a href="${depto.link}" target="_blank" class="text-indigo-600 underline">Ver en Airbnb</a>
-            </div>
-          `;
-          popupsContainer.appendChild(popup);
-        });
-      });
-
-    function openPopup(id) {
-      const popup = document.getElementById(`popup-${id}`);
-      popup.classList.remove('hidden');
-      setTimeout(() => popup.classList.add('show'), 10);
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePopup(id) {
-      const popup = document.getElementById(`popup-${id}`);
-      popup.classList.remove('show');
-      setTimeout(() => popup.classList.add('hidden'), 300);
-      document.body.style.overflow = 'auto';
-    }
-
-    document.getElementById('capacity-filter').addEventListener('change', applyFilters);
-    document.getElementById('price-filter').addEventListener('change', applyFilters);
-    document.getElementById('reset-filters').addEventListener('click', function() {
-      document.getElementById('capacity-filter').value = '';
-      document.getElementById('price-filter').value = '';
-      applyFilters();
+  fetch('./data/info.json')
+    .then(response => response.json())
+    .then(data => {
+      departamentos = data;
+      renderDepartments(departamentos);
     });
 
-    function applyFilters() {
-      const selectedCapacity = parseInt(document.getElementById('capacity-filter').value);
-      const selectedPrice = parseInt(document.getElementById('price-filter').value);
-
-      document.querySelectorAll('.card').forEach(card => {
-        const capacityText = card.querySelector('p:nth-child(3)').textContent;
-        const priceText = card.querySelector('p:nth-child(4)').textContent;
-        const capacity = parseInt(capacityText.replace(/\D/g, ''));
-        const price = parseInt(priceText.replace(/\D/g, ''));
-
-        let show = true;
-        if (!isNaN(selectedCapacity) && capacity < selectedCapacity) show = false;
-        if (!isNaN(selectedPrice) && price > selectedPrice) show = false;
-
-        card.style.display = show ? 'block' : 'none';
-      });
-    }
-
-    let currentImageIndex = 0;
-    let currentImageList = [];
-
-    function openLightbox(images, index) {
-      currentImageList = images;
-      currentImageIndex = index;
-      updateLightboxImage();
-      const lightbox = document.getElementById('lightbox');
-      lightbox.classList.remove('hidden');
-      setTimeout(() => lightbox.classList.add('show'), 10);
-    }
-
-    function closeLightbox() {
-      const lightbox = document.getElementById('lightbox');
-      lightbox.classList.remove('show');
-      setTimeout(() => lightbox.classList.add('hidden'), 300);
-    }
-
-    function prevImage() {
-      currentImageIndex = (currentImageIndex - 1 + currentImageList.length) % currentImageList.length;
-      updateLightboxImage();
-    }
-
-    function nextImage() {
-      currentImageIndex = (currentImageIndex + 1) % currentImageList.length;
-      updateLightboxImage();
-    }
-
-    function updateLightboxImage() {
-      const img = document.getElementById('lightbox-img');
-      if (img && currentImageList.length) {
-        img.src = currentImageList[currentImageIndex];
-      }
-    }
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        closeLightbox();
-        document.querySelectorAll('.popup').forEach(popup => {
-          popup.classList.remove('show');
-          setTimeout(() => popup.classList.add('hidden'), 300);
-        });
-        document.body.style.overflow = 'auto';
-      }
+  function renderDepartments(data) {
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+    data.forEach(depto => {
+      const card = document.createElement('div');
+      card.className = 'card bg-white rounded shadow overflow-hidden transform hover:scale-105 transition-all fade-in';
+      card.innerHTML = `
+        <img src="${depto.imagen}" alt="${depto.titulo}" loading="lazy" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="font-bold text-lg mb-2">${depto.titulo}</h2>
+          <p class="text-gray-600 text-sm mb-1">${depto.ubicacion}</p>
+          <p class="text-gray-600 text-sm mb-1">👥 ${depto.capacidad} personas</p>
+          <p class="text-indigo-600 font-semibold">Desde $${depto.precio.toLocaleString('es-CL')}</p>
+        </div>
+      `;
+      card.addEventListener('click', () => openPopup(depto));
+      gallery.appendChild(card);
     });
-  </script>
+  }
+
+  function openPopup(depto) {
+    const popupContent = document.getElementById('popup-content');
+    const fullImageList = depto.imagenes.map(img => `${depto.directorio}${img}`);
+    currentImageList = fullImageList;
+
+    popupContent.innerHTML = `
+      <h2 class="text-2xl font-bold mb-4">${depto.titulo}</h2>
+      <div class="flex overflow-x-auto space-x-4 mb-4">
+        ${fullImageList.map((img, i) => `<img src="${img}" loading="lazy" class="h-40 cursor-pointer" onclick="openLightbox(currentImageList, ${i})">`).join('')}
+      </div>
+      <p class="mb-4">${depto.descripcion}</p>
+      <a href="${depto.link}" target="_blank" class="text-indigo-600 underline">Ver en Airbnb</a>
+    `;
+    document.getElementById('popup').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    document.getElementById('popup').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+
+  document.getElementById('capacity-filter').addEventListener('change', applyFilters);
+  document.getElementById('price-filter').addEventListener('change', applyFilters);
+  document.getElementById('reset-filters').addEventListener('click', () => {
+    document.getElementById('capacity-filter').value = '';
+    document.getElementById('price-filter').value = '';
+    renderDepartments(departamentos);
+  });
+
+  function applyFilters() {
+    const selectedCapacity = parseInt(document.getElementById('capacity-filter').value);
+    const selectedPrice = parseInt(document.getElementById('price-filter').value);
+
+    const filtered = departamentos.filter(d => {
+      const matchesCapacity = isNaN(selectedCapacity) || d.capacidad >= selectedCapacity;
+      const matchesPrice = isNaN(selectedPrice) || d.precio <= selectedPrice;
+      return matchesCapacity && matchesPrice;
+    });
+
+    renderDepartments(filtered);
+  }
+
+  function openLightbox(images, index) {
+    currentImageList = images;
+    currentImageIndex = index;
+    updateLightboxImage();
+    document.getElementById('lightbox').classList.remove('hidden');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + currentImageList.length) % currentImageList.length;
+    updateLightboxImage();
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % currentImageList.length;
+    updateLightboxImage();
+  }
+
+  function updateLightboxImage() {
+    const img = document.getElementById('lightbox-img');
+    img.src = currentImageList[currentImageIndex];
+  }
+</script>
 
 </body>
 </html>
