@@ -7,36 +7,43 @@
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    .fade-in { animation: fadeIn 0.8s ease forwards; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .popup.show, #lightbox.show { opacity: 1; pointer-events: auto; transition: opacity 0.5s ease; }
-    #popup, #lightbox { opacity: 0; transition: opacity 0.5s ease; }
-    #lightbox-img { transition: opacity 0.5s ease; }
-    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); padding: 10px; border-radius: 50%; cursor: pointer; }
-    .lightbox-nav:hover { background: rgba(0,0,0,0.8); }
-    .left-nav { left: 20px; }
-    .right-nav { right: 20px; }
-  </style>
 </head>
 <style>
     .fade-in { animation: fadeIn 0.8s ease forwards; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    
+  
     #popup, #lightbox {
       opacity: 0;
       pointer-events: none;
+      backdrop-filter: blur(5px); /* EFECTO BLUR */
       transition: opacity 0.5s ease;
     }
     #popup.show, #lightbox.show {
       opacity: 1;
       pointer-events: auto;
     }
-    
+  
+    #popup-content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      width: 100%;
+    }
+  
+    .popup-thumbnails img {
+      border-radius: 0.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .popup-thumbnails img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+  
     #lightbox-img {
       transition: opacity 0.5s ease;
     }
-    
+  
     .lightbox-nav {
       position: absolute;
       top: 50%;
@@ -52,6 +59,7 @@
     .left-nav { left: 20px; }
     .right-nav { right: 20px; }
   </style>
+  
 <body class="bg-gray-100">
 
 <!-- Banner -->
@@ -167,7 +175,9 @@
     </div>
   ` : `<p class="mb-4 text-red-500">No hay imágenes disponibles para este departamento.</p>`}
   <p class="mb-4">${depto.descripcion}</p>
-  <a href="${depto.link}" target="_blank" class="text-indigo-600 underline">Ver en Airbnb</a>
+  <a href="${depto.link}" target="_blank" class="inline-block bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition">
+     Ver en Airbnb
+   </a>
 `;
 
   document.getElementById('popup').classList.remove('hidden');
@@ -238,6 +248,12 @@
       img.style.opacity = 1;
     }, 200);
   }
+  // Cierra popup si haces click fuera del contenido
+document.getElementById('popup').addEventListener('click', function (e) {
+  if (e.target === this) {
+    closePopup();
+  }
+});
 </script>
 
 </body>
