@@ -98,7 +98,7 @@
           <h2 class="font-bold text-lg mb-2">${depto.titulo}</h2>
           <p class="text-gray-600 text-sm mb-1">${depto.ubicacion}</p>
           <p class="text-gray-600 text-sm mb-1">👥 ${depto.capacidad} personas</p>
-          <p class="text-indigo-600 font-semibold">Desde $${depto.precio.toLocaleString('es-CL')}</p>
+          <p class="text-indigo-600 font-semibold">Desde $${parseInt(depto.precio).toLocaleString('es-CL')}</p>
         </div>
       `;
       card.addEventListener('click', () => openPopup(depto.id));
@@ -108,9 +108,9 @@
 
   function openPopup(id) {
     const depto = departamentos.find(d => d.id == id);
+    if (!depto) return;
     const popupContent = document.getElementById('popup-content');
     const fullImageList = depto.imagenes.map(img => `${depto.directorio}${img}`);
-
     currentImageList = fullImageList;
 
     popupContent.innerHTML = `
@@ -133,6 +133,19 @@
     document.body.style.overflow = 'auto';
   }
 
+  function applyFilters() {
+    const selectedCapacity = parseInt(document.getElementById('capacity-filter').value);
+    const selectedPrice = parseInt(document.getElementById('price-filter').value);
+
+    const filtered = departamentos.filter(d => {
+      const matchesCapacity = isNaN(selectedCapacity) || parseInt(d.capacidad) >= selectedCapacity;
+      const matchesPrice = isNaN(selectedPrice) || parseInt(d.precio) <= selectedPrice;
+      return matchesCapacity && matchesPrice;
+    });
+
+    renderDepartments(filtered);
+  }
+
   document.getElementById('capacity-filter').addEventListener('change', applyFilters);
   document.getElementById('price-filter').addEventListener('change', applyFilters);
   document.getElementById('reset-filters').addEventListener('click', () => {
@@ -140,19 +153,6 @@
     document.getElementById('price-filter').value = '';
     renderDepartments(departamentos);
   });
-
-  function applyFilters() {
-    const selectedCapacity = parseInt(document.getElementById('capacity-filter').value);
-    const selectedPrice = parseInt(document.getElementById('price-filter').value);
-
-    const filtered = departamentos.filter(d => {
-      const matchesCapacity = isNaN(selectedCapacity) || d.capacidad >= selectedCapacity;
-      const matchesPrice = isNaN(selectedPrice) || d.precio <= selectedPrice;
-      return matchesCapacity && matchesPrice;
-    });
-
-    renderDepartments(filtered);
-  }
 
   function openLightbox(images, index) {
     currentImageList = images;
