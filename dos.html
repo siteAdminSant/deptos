@@ -101,14 +101,16 @@
           <p class="text-indigo-600 font-semibold">Desde $${depto.precio.toLocaleString('es-CL')}</p>
         </div>
       `;
-      card.addEventListener('click', () => openPopup(depto));
+      card.addEventListener('click', () => openPopup(depto.id));
       gallery.appendChild(card);
     });
   }
 
-  function openPopup(depto) {
+  function openPopup(id) {
+    const depto = departamentos.find(d => d.id == id);
     const popupContent = document.getElementById('popup-content');
     const fullImageList = depto.imagenes.map(img => `${depto.directorio}${img}`);
+
     currentImageList = fullImageList;
 
     popupContent.innerHTML = `
