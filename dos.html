@@ -20,16 +20,37 @@
   </style>
 </head>
 <style>
-    /* Imágenes miniatura del popup */
-    .popup-thumbnails img {
-      border-radius: 0.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .fade-in { animation: fadeIn 0.8s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    
+    #popup, #lightbox {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    #popup.show, #lightbox.show {
+      opacity: 1;
+      pointer-events: auto;
     }
     
-    .popup-thumbnails img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    #lightbox-img {
+      transition: opacity 0.5s ease;
     }
+    
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .lightbox-nav:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    .left-nav { left: 20px; }
+    .right-nav { right: 20px; }
   </style>
 <body class="bg-gray-100">
 
