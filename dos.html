@@ -354,6 +354,58 @@ document.getElementById('popup').addEventListener('click', function (e) {
   }
 });
 
+const form = document.getElementById('contact-form');
+  const emailInput = document.getElementById('email');
+  const emailError = document.getElementById('email-error');
+  const formStatus = document.getElementById('form-status');
+
+  emailInput.addEventListener('input', () => {
+    const emailValid = emailInput.validity.valid;
+    if (!emailValid) {
+      emailError.classList.remove('hidden');
+      emailInput.classList.add('border-red-500');
+    } else {
+      emailError.classList.add('hidden');
+      emailInput.classList.remove('border-red-500');
+    }
+  });
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    if (!emailInput.validity.valid) {
+      emailError.classList.remove('hidden');
+      emailInput.classList.add('border-red-500');
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/tu-codigo-formspree', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        formStatus.textContent = '¡Mensaje enviado correctamente!';
+        formStatus.classList.remove('hidden');
+        form.reset();
+      } else {
+        formStatus.textContent = 'Hubo un error al enviar el formulario. Intenta nuevamente.';
+        formStatus.classList.remove('hidden');
+        formStatus.classList.add('text-red-500');
+      }
+
+    } catch (error) {
+      formStatus.textContent = 'Error de conexión. Intenta más tarde.';
+      formStatus.classList.remove('hidden');
+      formStatus.classList.add('text-red-500');
+    }
+
 </script>
 <!-- Footer -->
 
@@ -367,17 +419,40 @@ document.getElementById('popup').addEventListener('click', function (e) {
     </div>
   </section>
 <!-- Contacto -->
+<!-- Contacto -->
 <section id="contacto" class="py-16 bg-white">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold text-indigo-600 mb-6">Contacto</h2>
       <p class="text-gray-700 text-lg max-w-2xl mx-auto mb-8">
-        ¿Tienes alguna consulta? ¡Estamos para ayudarte! Puedes escribirnos por WhatsApp o enviarnos un correo electrónico.
+        ¿Tienes alguna consulta? ¡Envíanos un mensaje!
       </p>
-      <a href="mailto:correo@tusitio.com" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded transition">
-        Enviar Correo
-      </a>
+      
+      <form id="contact-form" class="max-w-lg mx-auto space-y-6">
+        <div>
+          <label class="block text-gray-700 text-left mb-2" for="email">Correo electrónico*</label>
+          <input type="email" id="email" name="email" required class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          <p id="email-error" class="text-red-500 text-sm mt-1 hidden">Por favor ingresa un correo válido.</p>
+        </div>
+      
+        <div>
+          <label class="block text-gray-700 text-left mb-2" for="telefono">Teléfono de contacto</label>
+          <input type="text" id="telefono" name="telefono" class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        </div>
+      
+        <div>
+          <label class="block text-gray-700 text-left mb-2" for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+        </div>
+      
+        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded transition">
+          Enviar Mensaje
+        </button>
+      </form>
+      
+      <p id="form-status" class="mt-4 text-green-600 hidden">¡Mensaje enviado correctamente!</p>
     </div>
   </section>
+  
 <footer class="bg-gray-200 text-center text-gray-600 text-sm py-4 mt-8">
     © 2025 Home Rent. Todos los derechos reservados.
   </footer>
