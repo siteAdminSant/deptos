@@ -63,16 +63,25 @@
 <body class="bg-gray-100">
 
     <!-- Header -->
+<!-- Header con menú hamburguesa -->
 <header class="bg-white shadow-md py-4">
     <div class="container mx-auto px-6 flex justify-between items-center">
       <!-- Logo + Frase -->
       <div class="flex items-center space-x-3">
-        <img src="https://img.icons8.com/ios-filled/50/airbnb.png" alt="Icono Rentas Cortas" class="w-8 h-8">
+        <img src="https://img.icons8.com/ios-filled/50/suitcase.png" alt="Icono Maleta" class="w-8 h-8">
         <span class="text-xl font-bold text-indigo-600">Rentas Cortas</span>
       </div>
-      
-      <!-- Menú -->
-      <nav class="flex space-x-6 text-gray-700 font-semibold">
+  
+      <!-- Botón Hamburguesa (solo visible en móviles) -->
+      <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+  
+      <!-- Menú de navegación -->
+      <nav id="menu" class="hidden md:flex space-x-6 text-gray-700 font-semibold">
         <a href="#sobre-nosotros" class="hover:text-indigo-600">Sobre Nosotros</a>
         <a href="#contacto" class="hover:text-indigo-600">Contacto</a>
         <a href="https://wa.me/56931962245" target="_blank" class="hover:text-green-500">WhatsApp</a>
@@ -81,11 +90,11 @@
   </header>
 
 <!-- Banner -->
-<section class="py-16">
-    <div class="container mx-auto bg-indigo-600 text-white rounded-lg overflow-hidden bg-cover bg-center" style="background-image: url('./cmpy/IMG_5407.jpg');">
-      <div class="px-4 py-16 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Home Rent</h1>
-        <p class="text-lg md:text-2xl mb-6">Encuentra el sitio perfecto para tu próxima estadía</p>
+<section class="py-0">
+    <div class="container mx-auto rounded-lg overflow-hidden bg-cover bg-center" style="background-image: url('./cmpy/IMG_5407.jpg');">
+      <div class="px-4 py-16 text-center bg-black bg-opacity-40">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Home Rent</h1>
+        <p class="text-lg md:text-2xl mb-6 text-white">Encuentra el sitio perfecto para tu próxima estadía</p>
       </div>
     </div>
   </section>
@@ -275,6 +284,14 @@ document.getElementById('popup').addEventListener('click', function (e) {
     closePopup();
   }
 });
+
+const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
 </script>
 <!-- Footer -->
 <footer class="bg-gray-200 text-center text-gray-600 text-sm py-4 mt-8">
