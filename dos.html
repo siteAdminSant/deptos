@@ -58,6 +58,23 @@
     }
     .left-nav { left: 20px; }
     .right-nav { right: 20px; }
+    .slide-down {
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.3s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+  }
   </style>
   
 <body class="bg-gray-100">
@@ -72,22 +89,48 @@
         <span class="text-xl font-bold text-indigo-600">Rentas Cortas</span>
       </div>
   
-      <!-- Botón Hamburguesa (solo visible en móviles) -->
+      <!-- Botón Hamburguesa -->
       <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
   
       <!-- Menú de navegación -->
-      <nav id="menu" class="hidden md:flex space-x-6 text-gray-700 font-semibold">
+      <nav id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 text-gray-700 font-semibold mt-4 md:mt-0">
         <a href="#sobre-nosotros" class="hover:text-indigo-600">Sobre Nosotros</a>
         <a href="#contacto" class="hover:text-indigo-600">Contacto</a>
         <a href="https://wa.me/56931962245" target="_blank" class="hover:text-green-500">WhatsApp</a>
       </nav>
     </div>
   </header>
+  
+  <!-- Script para la hamburguesa -->
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const iconPath = document.getElementById('menu-icon-path');
+  
+    let menuOpen = false;
+  
+    toggle.addEventListener('click', () => {
+      if (!menuOpen) {
+        menu.classList.remove('hidden');
+        menu.classList.remove('slide-up');
+        menu.classList.add('slide-down');
+        iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // cambia a X
+      } else {
+        menu.classList.remove('slide-down');
+        menu.classList.add('slide-up');
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 300); // Espera que termine la animación antes de ocultar
+        iconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // vuelve a hamburguesa
+      }
+      menuOpen = !menuOpen;
+    });
+  </script>
 
 <!-- Banner -->
 <section class="py-0">
