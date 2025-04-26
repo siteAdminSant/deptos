@@ -1,87 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Departamentos en Airbnb</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  
-  <header class="bg-white shadow">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-indigo-600">NombreSitioOAlgo</a>
-      <nav class="space-x-4">
-        <a href="#" class="text-gray-600 hover:text-indigo-600">Inicio</a>
-        <a href="#" class="text-gray-600 hover:text-indigo-600">Venta</a>
-        <a href="#" class="text-gray-600 hover:text-indigo-600">Arriendo</a>
-        <a href="#" class="text-gray-600 hover:text-indigo-600">Sobre Nosotros</a>
-        <a href="#" class="text-gray-600 hover:text-indigo-600">Contacto</a>
-        <a href="https://wa.me/56931962245?text=Hola%2C%20vi%20tu%20sitio%20web%20y%20me%20interesa%20saber%20más%20sobre%20los%20departamentos" 
-          target="_blank" 
-          title="WhatsApp"
-          class="inline-flex items-center">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" 
-              alt="WhatsApp" 
-              class="w-6 h-6" />
-        </a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-gray-100">
 
+  <!-- Banner -->
   <section class="bg-indigo-600 text-white py-16 bg-cover bg-center" style="background-image: url('./cmpy/IMG_5407.jpg');">
-    <div class="container mx-auto px-6 text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Home Rent</h1>
-      <p class="text-lg md:text-xl mb-6">Encuentra el sitio perfecto para tu proxima estadia.</p>
-    <!-- <a href="#" class="bg-white text-indigo-600 font-semibold px-8 py-4 rounded-full shadow hover:bg-gray-100 transition">
-        Ver propiedades
-      </a>*/  -->
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Home Rent</h1>
+      <p class="text-lg md:text-2xl mb-6">Encuentra el sitio perfecto para tu próxima estadía</p>
+      <!-- Puedes agregar un botón aquí si quieres -->
     </div>
   </section>
 
-  <div class="bg-white shadow">
-      <!-- Filtros y búsqueda -->
-      <div style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 10px; justify-content: right;">
-        <label for="capacity-filter" style="margin-right: 10px;">Personas:</label>
-        <select id="capacity-filter" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
-          <option value="0"></option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-        <label for="price-filter" style="margin-right: 10px;">Precio hasta:</label>
-        <select id="price-filter" style="padding: 0.5rem; border-radius: 5px; border: none; width: 140px;">
-          <option value="0"></option>
-          <option value="30000">30,000</option>
-          <option value="60000">60,000</option>
-          <option value="90000">90,000</option>
-        </select>
-        <button id="reset-filters">Restablecer filtros</button>
-      </div>
+  <!-- Filtros -->
+  <div class="container mx-auto px-4 py-6 flex flex-wrap gap-4 justify-center">
+    <div>
+      <label for="capacity-filter" class="mr-2 font-semibold">Personas:</label>
+      <select id="capacity-filter" class="p-2 rounded border">
+        <option value="">Todas</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4+</option>
+      </select>
+    </div>
+    <div>
+      <label for="price-filter" class="mr-2 font-semibold">Precio:</label>
+      <select id="price-filter" class="p-2 rounded border">
+        <option value="">Todos</option>
+        <option value="30000">Hasta 30,000</option>
+        <option value="60000">Hasta 60,000</option>
+        <option value="90000">Hasta 90,000</option>
+      </select>
+    </div>
+    <button id="reset-filters" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Restablecer</button>
+  </div>
 
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+  <!-- Galería -->
+  <div id="gallery" class="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <!-- Las tarjetas de propiedades se insertan aquí dinámicamente -->
+  </div>
 
-      <div class="gallery" id="gallery"></div>
-      <div id="popups-container"></div>
-  
-      <div id="lightbox" class="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">×</button>
-        <button class="lightbox-prev" onclick="prevImage()">❮</button>
-        <img id="lightbox-img" src="" alt="Vista ampliada">
-        <button class="lightbox-next" onclick="nextImage()">❯</button>
-      </div>
+  <!-- Popups -->
+  <div id="popups-container"></div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+    <img id="lightbox-img" class="max-h-full max-w-full">
+    <div class="absolute bottom-8 flex space-x-4">
+      <button onclick="prevImage()" class="text-white text-3xl">&#8592;</button>
+      <button onclick="nextImage()" class="text-white text-3xl">&#8594;</button>
     </div>
   </div>
 
-  <footer class="bg-gray-100 text-center py-8 text-sm text-gray-500">
-    © 2025 Algo — Todos los derechos reservados
-  </footer>
-  
-  <script src="js/script.js"></script>
+  <script src="./script.js"></script>
+
 </body>
 </html>
