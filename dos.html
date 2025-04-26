@@ -119,24 +119,41 @@
   }
 
   function openPopup(id) {
-    const depto = departamentos.find(d => d.id == id);
-    if (!depto) return;
-    const popupContent = document.getElementById('popup-content');
-    const fullImageList = depto.imagenes.map(img => `${depto.directorio}${img}`);
-    currentImageList = fullImageList;
-
-    popupContent.innerHTML = `
-      <h2 class="text-2xl font-bold mb-4">${depto.titulo}</h2>
-      <div class="flex overflow-x-auto space-x-4 mb-4">
-        ${fullImageList.map((img, i) => `<img src="${img}" loading="lazy" class="h-40 cursor-pointer" onclick="openLightbox(currentImageList, ${i})">`).join('')}
-      </div>
-      <p class="mb-4">${depto.descripcion}</p>
-      <a href="${depto.link}" target="_blank" class="text-indigo-600 underline">Ver en Airbnb</a>
-    `;
-    document.getElementById('popup').classList.remove('hidden');
-    setTimeout(() => document.getElementById('popup').classList.add('show'), 10);
-    document.body.style.overflow = 'hidden';
+  const depto = departamentos.find(d => d.id == id);
+  if (!depto) {
+    console.error('Departamento no encontrado para id:', id);
+    return;
   }
+  
+  console.log('Abriendo popup para:', depto);
+
+  const popupContent = document.getElementById('popup-content');
+  
+  const fullImageList = depto.imagenes?.map(img => `${depto.directorio}${img}`) || [];
+  currentImageList = fullImageList;
+  
+  if (fullImageList.length === 0) {
+    console.warn('No hay imágenes disponibles para este departamento.');
+  }
+
+  popupContent.innerHTML = `
+    <h2 class="text-2xl font-bold mb-4">${depto.titulo}</h2>
+    <div class="flex overflow-x-auto space-x-4 mb-4 popup-thumbnails">
+      ${fullImageList.map((img, i) => `
+        <img src="${img}" loading="lazy" class="h-40 cursor-pointer" onclick="openLightbox(currentImageList, ${i})">
+      `).join('')}
+    </div>
+    <p class="mb-4">${depto.descripcion}</p>
+    <a href="${depto.link}" target="_blank" class="text-indigo-600 underline">Ver en Airbnb</a>
+  `;
+
+  document.getElementById('popup').classList.remove('hidden');
+  setTimeout(() => {
+    document.getElementById('popup').classList.add('show');
+  }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
 
   function closePopup() {
     const popup = document.getElementById('popup');
