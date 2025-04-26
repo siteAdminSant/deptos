@@ -58,6 +58,21 @@
     }
     .left-nav { left: 20px; }
     .right-nav { right: 20px; }
+
+    .fade-in-logo {
+    animation: fadeInLogo 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInLogo {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) rotate(-15deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
   </style>
   
 <body class="bg-gray-100">
@@ -68,26 +83,56 @@
     <div class="container mx-auto px-6 flex justify-between items-center">
       <!-- Logo + Frase -->
       <div class="flex items-center space-x-3">
-        <img src="https://img.icons8.com/ios-filled/50/suitcase.png" alt="Icono Maleta" class="w-8 h-8">
+        <img src="https://img.icons8.com/ios-filled/50/suitcase.png" alt="Icono Maleta" class="w-8 h-8 fade-in-logo">
         <span class="text-xl font-bold text-indigo-600">Rentas Cortas</span>
       </div>
   
-      <!-- Botón Hamburguesa (solo visible en móviles) -->
+      <!-- Botón Hamburguesa -->
       <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
   
-      <!-- Menú de navegación -->
-      <nav id="menu" class="hidden md:flex space-x-6 text-gray-700 font-semibold">
+      <!-- Menú Desktop -->
+      <nav class="hidden md:flex space-x-6 text-gray-700 font-semibold">
         <a href="#sobre-nosotros" class="hover:text-indigo-600">Sobre Nosotros</a>
         <a href="#contacto" class="hover:text-indigo-600">Contacto</a>
         <a href="https://wa.me/56931962245" target="_blank" class="hover:text-green-500">WhatsApp</a>
       </nav>
     </div>
   </header>
+  
+  <!-- Menú Popup para Móviles -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white bg-opacity-95 hidden flex-col items-center justify-center z-50">
+    <button id="close-menu" class="absolute top-4 right-4 text-3xl text-gray-700">&times;</button>
+    <nav class="flex flex-col space-y-6 text-2xl font-semibold text-gray-700">
+      <a href="#sobre-nosotros" class="hover:text-indigo-600" onclick="closeMobileMenu()">Sobre Nosotros</a>
+      <a href="#contacto" class="hover:text-indigo-600" onclick="closeMobileMenu()">Contacto</a>
+      <a href="https://wa.me/56931962245" target="_blank" class="hover:text-green-500">WhatsApp</a>
+    </nav>
+  </div>
+
+  <!-- Script para abrir/cerrar menú móvil -->
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
+    const iconPath = document.getElementById('menu-icon-path');
+  
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // cambia a X si quieres
+    });
+  
+    closeMenuBtn.addEventListener('click', closeMobileMenu);
+  
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      iconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // vuelve hamburguesa
+    }
+  </script>
 
 <!-- Banner -->
 <section class="py-0">
