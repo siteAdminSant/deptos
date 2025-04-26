@@ -63,12 +63,14 @@
 <body class="bg-gray-100">
 
 <!-- Banner -->
-<section class="bg-indigo-600 text-white py-16 bg-cover bg-center" style="background-image: url('./cmpy/IMG_5407.jpg');">
-  <div class="container mx-auto px-4 text-center">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Home Rent</h1>
-    <p class="text-lg md:text-2xl mb-6">Encuentra el sitio perfecto para tu próxima estadía</p>
-  </div>
-</section>
+<section class="py-16">
+    <div class="container mx-auto bg-indigo-600 text-white rounded-lg overflow-hidden bg-cover bg-center" style="background-image: url('./cmpy/IMG_5407.jpg');">
+      <div class="px-4 py-16 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Home Rent</h1>
+        <p class="text-lg md:text-2xl mb-6">Encuentra el sitio perfecto para tu próxima estadía</p>
+      </div>
+    </div>
+  </section>
 
 <!-- Filtros -->
 <div class="container mx-auto px-4 py-6 flex flex-wrap gap-4 justify-center">
@@ -175,9 +177,10 @@
     </div>
   ` : `<p class="mb-4 text-red-500">No hay imágenes disponibles para este departamento.</p>`}
   <p class="mb-4">${depto.descripcion}</p>
-  <a href="${depto.link}" target="_blank" class="inline-block bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition">
-     Ver en Airbnb
-   </a>
+    <a href="${depto.link}" target="_blank" class="inline-flex items-center bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_Bélo.svg/20px-Airbnb_Logo_Bélo.svg.png" alt="Airbnb" class="w-5 h-5 mr-2">
+    Ver en Airbnb
+    </a>
 `;
 
   document.getElementById('popup').classList.remove('hidden');
@@ -255,6 +258,10 @@ document.getElementById('popup').addEventListener('click', function (e) {
   }
 });
 </script>
-
+<!-- Footer -->
+<footer class="bg-gray-200 text-center text-gray-600 text-sm py-4 mt-8">
+    © 2025 Home Rent. Todos los derechos reservados.
+  </footer>
+  
 </body>
 </html>
