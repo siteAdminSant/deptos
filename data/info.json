@@ -340,5 +340,57 @@
         ],
         "descripcion": "¡Disfruta del corazón histórico de Santiago! Ubicado en el casco Histórico, este departamento es perfecto para explorar la historia y cultura de la ciudad.  A pasos del metro Santa Ana y cerca de la Plaza de Armas, Catedral Metropolitana y Mercado Central. Diseño moderno, equipamiento completo y capacidad para 4 personas. Ideal para familias, grupos y viajeros. Ubicación privilegiada, cerca de restaurantes y tiendas. ¡Reserva ahora y disfruta de una estancia inolvidable en el corazón de Santiago!",
         "link": "https://www.airbnb.com/l/efWvsftP"
+    },
+    {
+        "id": "15",
+        "codigo": "DPT_015",
+        "titulo": "Encantador Depto , Hospital UC y barrio Lastarrias",
+        "capacidad": "4",
+        "ubicacion": "Santiago Centro",
+        "precio": "47000",
+        "imagen": "./cmpy/15/01.avif",
+        "directorio": "./cmpy/15/",
+        "imagenes": [
+            "01.avif",
+            "02.avif",
+            "03.avif",
+            "04.avif",
+            "05.avif",
+            "06.avif",
+            "07.avif",
+            "08.avif",
+            "09.avif",
+            "10.avif",
+            "11.avif"
+        ],
+        "descripcion": "Disfruta de la sencillez de este alojamiento tranquilo y céntrico.",
+        "link": "https://www.airbnb.com/l/txgLzqU9"
+    },
+    {
+        "id": "16",
+        "codigo": "DPT_016",
+        "titulo": "La mejor vista cerca Plaza Ñuñoa",
+        "capacidad": "4",
+        "ubicacion": "Ñuñoa",
+        "precio": "55000",
+        "imagen": "./cmpy/16/01.avif",
+        "directorio": "./cmpy/16/",
+        "imagenes": [
+            "01.avif",
+            "02.avif",
+            "03.avif",
+            "04.avif",
+            "05.avif",
+            "06.avif",
+            "07.avif",
+            "08.avif",
+            "09.avif",
+            "10.avif",
+            "11.avif",
+            "12.avif",
+            "13.avif"
+        ],
+        "descripcion": "Descubre la escapada perfecta en nuestro encantador departamento en el corazón de Ñuñoa. Diseñado para alojar cómodamente a 4 personas, este refugio totalmente equipado ofrece un ambiente acogedor y moderno. Disfruta de una impresionante vista a la cordillera, creando un escenario ideal para relajarte después de un día de trabajo o de exploración. Ubicado cerca de la vibrante Plaza Ñuñoa, tendrás acceso a restaurantes, cafés y actividades culturales. ¡Ven y vive una experiencia inolvidable!",
+        "link": "https://www.airbnb.com/l/ImAWoZ7C"
     }
 ]
